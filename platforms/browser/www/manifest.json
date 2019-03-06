@@ -1,10 +1,10 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "helloworld",
-  "short_name": "helloworld",
-  "version": "com.phonegap.helloworld",
-  "description": "Hello World sample application that responds to the deviceready event.",
+  "name": "Tanta Sporting Club",
+  "short_name": "Tanta Sporting Club",
+  "version": "me.digitalharbor.tantasc",
+  "description": "The official mobile application of Tanta Sporting Club.",
   "author": "PhoneGap Team",
   "icons": [],
   "start_url": "index.html"

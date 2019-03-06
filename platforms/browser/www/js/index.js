@@ -17,24 +17,71 @@
  * under the License.
  */
 var app = {
-  // Application Constructor
-  initialize: function() {
-    this.bindEvents();
+  home: function() {
+    // navigator.splashscreen.show();
+
+
+      // get posts for slider
+      const data1 = new Promise(function(resolve, reject){
+        axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories=77&per_page=3").then(function(response) {
+          response.data.forEach(post => {
+            document.getElementById("slider").innerHTML += "<div class='slider'>" +
+              "<img src='" + post._embedded['wp:featuredmedia'][0].source_url + "' alt='slider-img' class='w-100 h-100'>" +
+              "<p>" + post.title.rendered + "</p>" +
+            "</div>";
+          });
+        }).then(function(){
+          resolve(true);
+        });
+      });
+
+      // get posts for latest news
+
+      const data2 = new Promise(function(resolve, reject){
+        axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories_exclude=77&per_page=3").then(function(response) {
+          response.data.forEach(post => {
+            document.getElementById("news-items").innerHTML += "<a href='" + post.link + "' class='media mb-4'>"+
+                      "<img class='d-flex mr-3 mb-3' src='" + post._embedded['wp:featuredmedia'][0].source_url + "' alt='صورة الخبر'>"+
+                      "<div class='media-body'>"+
+                          "<p>" + post.title.rendered + "</p>"+
+                          "<span>" + post.date + "</span>" +
+                      "</div>"+
+                  "</a>";
+          });
+        }).then(() => {
+          resolve(true);
+        });
+      });
+
+      Promise.all([data1, data2]).then(function(values){
+        console.log(values);
+        navigator.splashscreen.hide();
+      });
+    
   },
-  // Bind Event Listeners
-  //
-  // Bind any events that are required on startup. Common events are:
-  // 'load', 'deviceready', 'offline', and 'online'.
-  bindEvents: function() {
-    document.addEventListener("online", this.onDeviceReady, false);
+
+
+  news: function(search) {
+    var param = "";
+    if(search){
+      param = "?search=" + search;
+    }
+
+    navigator.splashscreen.show();
+      axios.get("http://www.tantasc.net/wp-json/wp/v2/posts" + param).then(function(response) {
+          response.data.forEach(post => {
+            document.getElementById("news-items").innerHTML += "<a href='" + post.link + "' class='media mb-4'>"+
+                      "<img class='d-flex mr-3 mb-3' src='img/bg/bg-3.jpg' alt='Generic placeholder image'>"+
+                      "<div class='media-body'>"+
+                          "<p>" + post.title.rendered + "</p>"+
+                          // <span> الثلاثاء 10/10/2017 - 8.00 مساءا </span>
+                      "</div>"+
+                  "</a>";
+          });
+        }).then(function(){
+          navigator.splashscreen.hide();
+        });
   },
-  // deviceready Event Handler
-  //
-  // The scope of 'this' is the event. In order to call the 'receivedEvent'
-  // function, we must explicitly call 'app.receivedEvent(...);'
-  onDeviceReady: function() {
-    app.receivedEvent("deviceready");
-  },
-  // Update DOM on a Received Event
-  receivedEvent: function(id) {}
+  details: function() {},
+  about: function() {}
 };

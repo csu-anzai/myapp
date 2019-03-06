@@ -1,0 +1,92 @@
+body {
+  line-height: 1.6;
+  background-color: #eee;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  overflow-x: hidden;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.mobile-container {
+  width: 370px;
+  background: #fff;
+  padding: 20px 0 25px;
+  text-align: center;
+  overflow: auto;
+  height: 100vh; }
+
+.padding {
+  padding: 20px; }
+
+.custom-botton {
+  text-align: center;
+  border: none;
+  padding: 10px;
+  outline: none; }
+  .custom-botton:focus {
+    outline: none; }
+
+.no-scroll {
+  overflow-y: hidden; }
+
+.font-16 {
+  font-size: 16px !important; }
+
+a:hover {
+  text-decoration: none; }
+
+.slick-dots li.slick-active button:before {
+  color: #fff;
+  opacity: 1;
+  font-size: 10px;
+  background-color: transparent;
+  border: 1px solid #fff; }
+
+.slick-dots li button:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #fff;
+  opacity: 1; }
+
+.slick-dots {
+  bottom: -40px; }
+
+.mobile {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-image: url("../img/bg/footbal-bg.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative; }
+  .mobile .content {
+    padding: 70px 0 20px; }
+    .mobile .content .sponsers {
+      position: absolute;
+      bottom: 100px; }
+      .mobile .content .sponsers ul {
+        flex-wrap: wrap; }
+        .mobile .content .sponsers ul li img {
+          max-width: 100%;
+          margin: 10px; }
+  .mobile footer {
+    color: #fff; }
+
+@media (max-width: 1024px) {
+  .sponsers {
+    position: static !important; } }
+@media (max-width: 1024px) {
+  .mobile {
+    height: auto !important; } }
+.bg-2 {
+  background-image: url("../img/bg/landpage-bg2.png"); }
+
+.bg-3 {
+  background-image: url("../img/bg/bg-3.jpg"); }
+
+/*# sourceMappingURL=land-page.css.map */

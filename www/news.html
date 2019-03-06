@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>News</title>
+    <!-- External fills -->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="css/bootstrapA.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+</head>
+
+<body>
+
+    <nav class="position-relative">
+        <div class="container-fluid h-100">
+
+            <form>
+                <input type="search" placeholder="ابحث الان">
+            </form>
+            <div class="container-fluid h-100">
+                <div class="row h-100">
+                    <div class="col-4 h-100">
+                        <div class="toggle-menu h-100 d-flex align-items-center">
+                            <i class="mdi mdi-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="col-4 h-100">
+                        <div class="logo h-100 d-flex justify-content-center align-items-center">
+                            <h3 class="text-white"> أخبار النادى </h3>
+                        </div>
+                    </div>
+                    <div class="col-4 h-100">
+                        <div class="h-100 search">
+                            <ul class=" h-100 d-flex justify-content-end align-items-center">
+                                <li> <i class="mdi mdi-magnify"> </i> </li>
+                                <li class="m-0"> <i class="mdi mdi-dots-horizontal"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="news pt-3">
+        <div class="container-fluid">
+                <div class="news-img">
+                        <img src="img/tanta.jpg" class="img-responsive w-100" alt="img">
+                    </div>
+            <div class="caption">
+                <a href="" class="media mb-4">
+                    <div class="media-body">
+                        <p>هدف شيكابالا في نادى طنطا الرياضى امس ..</p>
+                        <span> الثلاثاء 10/10/2017 - 8.00 مساءا </span>
+                    </div>
+                </a>
+            </div>
+            <div class="news-items">
+                    <!-- ------------------ -->
+                    <a href="" class="media mb-4">
+                        <img class="d-flex mr-3 mb-3" src="img/bg/bg-3.jpg" alt="Generic placeholder image">
+                        <div class="media-body">
+        
+                            <p>هدف شيكابالا في نادى طنطا الرياضى امس ..</p>
+                            <span> الثلاثاء 10/10/2017 - 8.00 مساءا </span>
+                        </div>
+                    </a>
+                    <!-- ----------------- -->
+                    <a href="" class="media mb-4">
+                        <img class="d-flex mr-3 mb-3" src="img/bg/bg-3.jpg" alt="Generic placeholder image">
+                        <div class="media-body">
+        
+                            <p>هدف شيكابالا في نادى طنطا الرياضى امس ..</p>
+                            <span> الثلاثاء 10/10/2017 - 8.00 مساءا </span>
+                        </div>
+                    </a>
+        
+                    <!-- ----------------- -->
+        
+        
+                    <a href="" class="media mb-4">
+                        <img class="d-flex mr-3 mb-3" src="img/bg/bg-3.jpg" alt="Generic placeholder image">
+                        <div class="media-body">
+        
+                            <p>هدف شيكابالا في نادى طنطا الرياضى امس ..</p>
+                            <span> الثلاثاء 10/10/2017 - 8.00 مساءا </span>
+                        </div>
+                    </a>
+                    <!-- ----------------- -->
+                    <a href="" class="media mb-4">
+                        <img class="d-flex mr-3 mb-3" src="img/bg/bg-3.jpg" alt="Generic placeholder image">
+                        <div class="media-body">
+        
+                            <p>هدف شيكابالا في نادى طنطا الرياضى امس ..</p>
+                            <span> الثلاثاء 10/10/2017 - 8.00 مساءا </span>
+                        </div>
+                    </a>
+                    <!-- ----------------- -->
+                    <a href="" class="media mb-4">
+                        <img class="d-flex mr-3 mb-3" src="img/bg/bg-3.jpg" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <p>هدف شيكابالا في نادى طنطا الرياضى امس ..</p>
+                            <span> الثلاثاء 10/10/2017 - 8.00 مساءا </span>
+                        </div>
+                    </a>
+        
+        
+                </div>
+        </div>
+    </div>
+
+
+    <!-- Js External Fills -->
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+      app.initialize('news');
+    </script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $("body, html").on("click", function () {
+            $("nav form input[type='search']").removeClass("d-block");
+        });
+
+        $(".mdi-magnify").on("click", function (e) {
+            $("nav form input[type='search']").addClass("d-block");
+            e.stopPropagation();
+        });
+        $("nav form input[type='search']").on("click", function (e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+
+</html>

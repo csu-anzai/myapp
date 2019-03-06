@@ -36,6 +36,9 @@
     },
     "cordova-plugin-vibration": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
     }
   },
   "dependent_plugins": {

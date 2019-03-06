@@ -1,0 +1,125 @@
+body {
+  line-height: 1.6;
+  background-color: #eee;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  overflow-x: hidden;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.mobile-container {
+  width: 370px;
+  background: #fff;
+  padding: 20px 0 25px;
+  text-align: center;
+  overflow: auto;
+  height: 100vh; }
+
+.padding {
+  padding: 20px; }
+
+.custom-botton {
+  text-align: center;
+  border: none;
+  padding: 10px;
+  outline: none; }
+  .custom-botton:focus {
+    outline: none; }
+
+.no-scroll {
+  overflow-y: hidden; }
+
+.font-16 {
+  font-size: 16px !important; }
+
+a:hover {
+  text-decoration: none; }
+
+.slick-dots li.slick-active button:before {
+  color: #fff;
+  opacity: 1;
+  font-size: 10px;
+  background-color: transparent;
+  border: 1px solid #fff; }
+
+.slick-dots li button:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #fff;
+  opacity: 1; }
+
+.slick-dots {
+  bottom: -40px; }
+
+nav {
+  height: 40px;
+  width: 100%;
+  position: relative;
+  background: #2f3b96; }
+  nav .text-white {
+    font-size: 14px; }
+    @media (max-width: 340px) {
+      nav .text-white {
+        font-size: 10px; } }
+  nav form input[type="search"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    padding: 0 20px;
+    border: none;
+    color: #9a9a9a;
+    outline: none;
+    display: none; }
+    nav form input[type="search"] ::-webkit-input-placeholder {
+      color: #9a9a9a; }
+  nav i {
+    font-size: 24px;
+    cursor: pointer; }
+  nav .toggle-menu i {
+    color: #fff; }
+  nav .search li i {
+    color: #fef200; }
+
+.drop {
+  width: 260px;
+  position: absolute;
+  z-index: 99;
+  top: 39px;
+  left: 10px;
+  display: none;
+  padding: 10px; }
+
+header {
+  width: 100vw;
+  background: #fff;
+  margin-bottom: 0;
+  position: relative; }
+  header .slider {
+    width: 100%;
+    height: 400px;
+    position: relative; }
+    header .slider p {
+      padding: 10px;
+      color: #fff;
+      font-size: 20px;
+      background: rgba(47, 59, 150, 0.8);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%; }
+  header .slick-dots {
+    bottom: 120px; }
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0; }
+
+/*# sourceMappingURL=home.css.map */
