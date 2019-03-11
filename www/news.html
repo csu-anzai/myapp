@@ -28,8 +28,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/main.css">
-
-
+    <title>Tanta Sporting Club</title>
 </head>
 
 <body>
@@ -37,10 +36,9 @@
 
     <nav class="position-relative">
         <div class="container-fluid h-100">
-
-            <form>
-                <input type="search" placeholder="ابحث الان">
-            </form>
+        <form id="search" >
+            <input type="search" placeholder="ابحث الان">
+        </form>
             <div class="container-fluid h-100">
                 <div class="row h-100">
                     <div class="col-2 h-100">
@@ -69,7 +67,7 @@
         <div class="container-fluid">
             <div class="news-items" id="posts" >
 
-                </div>
+            </div>
         </div>
     </div>
 
@@ -85,27 +83,43 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-        $("body, html").on("click", function () {
-            $("nav form input[type='search']").removeClass("d-block");
-            $(".drop").slideUp();
-        });
+        document.addEventListener("deviceready", function(){
+            app.news();
+          }, false);
 
-        $(".mdi-magnify").on("click", function (e) {
-            $("nav form input[type='search']").addClass("d-block");
-            e.stopPropagation();
-        });
-        $("nav form input[type='search']").on("click", function (e) {
-            e.stopPropagation();
-        });
-        $(".mdi-dots-horizontal").on("click", function (e) {
-                $(".drop").slideToggle();
-                e.stopImmediatePropagation();
+
+      $(document).ready(function () {
+
+            $("#search").on("submit", function(e){
+              e.preventDefault();
+              app.news(this[0].value);
             });
-            $(".drop").on("click", function (e) {
+
+            $("body, html").on("click", function () {
+                $("nav form input[type='search']").removeClass("d-block");
+                $(".drop").slideUp();
+            });
+
+            $(".mdi-magnify").on("click", function (e) {
+                $("nav form input[type='search']").addClass("d-block");
                 e.stopPropagation();
-        });
-        $(".mdi-arrow-right").on("click", function (){
-            window.history.back();
+            });
+
+            $("nav form input[type='search']").on("click", function (e) {
+                e.stopPropagation();
+            });
+
+            $(".mdi-dots-horizontal").on("click", function (e) {
+                    $(".drop").slideToggle();
+                    e.stopImmediatePropagation();
+                });
+                $(".drop").on("click", function (e) {
+                    e.stopPropagation();
+            });
+
+            $(".mdi-arrow-right").on("click", function (){
+                window.history.back();
+            });
         });
 
     </script>

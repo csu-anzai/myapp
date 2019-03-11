@@ -89,8 +89,10 @@ var app = {
 
   news: function(search=false) {
     var param = "";
+    search = search ? search : window.location.hash.substr(1);
     if(search){
       param = "&search=" + search;
+      window.location = "news.html#" + search;
     }
 
     if(!sessionStorage.page){
@@ -101,11 +103,10 @@ var app = {
 
     navigator.splashscreen.show();
       // axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&per_page=10" + param).then(function(response) {
-      axios.get("test/data.json" + param).then(function(response) {
+      axios.get("test/data.json").then(function(response) {
         var posts = response.data;
 
         if(sessionStorage.page == 1){
-          var d = new Date(firstPost.date);
         }
 
         posts.forEach(post => {
@@ -129,6 +130,34 @@ var app = {
           navigator.splashscreen.hide();
         });
   },
-  details: function() {},
-  about: function() {}
+  post: function(id) {
+
+    navigator.splashscreen.show();
+      // axios.get("http://www.tantasc.net/wp-json/wp/v2/posts/" + id + "?_embed").then(function(response) {
+      axios.get("test/post.json").then(function(response) {
+        var post = response.data;
+
+          document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
+          document.getElementById("title").innerHTML = post.title.rendered;
+          document.getElementById("article").innerHTML = post.content.rendered;
+
+        }).then(function(){
+          navigator.splashscreen.hide();
+        });
+
+  },
+  page: function(id) {
+    navigator.splashscreen.show();
+      // axios.get("http://www.tantasc.net/wp-json/wp/v2/pages/" + id).then(function(response) {
+      axios.get("test/page.json").then(function(response) {
+        var page = response.data;
+
+          // document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
+          document.getElementById("title").innerHTML = page.title.rendered;
+          document.getElementById("article").innerHTML = page.content.rendered;
+
+        }).then(function(){
+          navigator.splashscreen.hide();
+        });
+  }
 };

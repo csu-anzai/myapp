@@ -61,19 +61,19 @@
                     <img src="img/logo/logo.png" width="100px">
                 </div>
                 <div class="menus">
-                    <button type="" class="custom-botton d-block w-100">دخول الاعضاء</button>
+                    <button type="" onclick="window.location = 'members.html'" class="custom-botton d-block w-100">دخول الاعضاء</button>
 
 
                     <!-- --------------------------- -->
 
                     <div class="menu-list text-right">
-                        <a href="#" class="custom-list"> عن النادى </a>
+                        <a href="page.html#5007" class="custom-list"> عن النادى </a>
                     </div>
 
                     <!-- -------------------------- -->
 
                     <div class="menu-list text-right">
-                        <a href="#" class="custom-list"> تاريخ النادى </a>
+                        <a href="page.html#5007" class="custom-list"> تاريخ النادى </a>
                     </div>
 
                     <!-- --------------------------- -->
@@ -88,7 +88,7 @@
 
 
     <nav class="position-relative">
-        <form>
+        <form id="search" >
             <input type="search" placeholder="ابحث الان">
         </form>
         <div class="container-fluid h-100">
@@ -143,13 +143,17 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/slick.js"></script>
-    <script src="js/main.js"></script>
     <script type="text/javascript" >
       document.addEventListener("deviceready", function(){
         app.home();
       }, false);
 
       $(document).ready(function () {
+
+            $("#search").on("submit", function(e){
+              e.preventDefault();
+              window.location = 'news.html#' + this[0].value;
+            });
 
             $(".toggle-menu i").on("click", function (e) {
                 $(".menu").toggleClass("rigth")
