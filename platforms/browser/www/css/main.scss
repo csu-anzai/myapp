@@ -35,7 +35,7 @@
 
 }
 
-// member-login page 
+// member-login page
 
 .member-login {
     .custom-list {
@@ -49,6 +49,9 @@
         position: relative;
         font-weight: bold;
         color: #000;
+        &:hover{
+          color: $mainColor
+        }
     }
 
     .content {
@@ -122,10 +125,7 @@
 
 }
 .media-body{
-    p{
-        font-size: 12px;
-        font-weight:bold;
-    }
+
     span{
         position: absolute;
         bottom: 15px;
@@ -152,10 +152,10 @@
 .menu {
     width: 260px;
     background: #fff;
-    height: 100%;
+    height: calc(100% - 50px);
     position: fixed;
     right: -260px;
-    top: 0;
+    top: 50px;
     z-index: 999;
     overflow: auto;
     transition: all .4s;
@@ -167,7 +167,6 @@
 
 .content {
     background: #fff;
-    padding-top: 40px !important;
     .head {
         font-size: 17px;
         font-weight: bold;
@@ -203,17 +202,19 @@
                 font-size: 10px;
                 font-weight: bold;
             }
- 
-        } 
+
+        }
     }
     .slick-dots li button:before{
 
         border: 1px solid $scondColor;
         background-color: $scondColor;
+
     }
     .slick-dots li.slick-active button:before{
         border: 1px solid $scondColor !important;
         background: transparent;
+
     }
 }
 
@@ -232,7 +233,7 @@
 
 }
 .news-d{
-    margin: 20px 0;
+    margin: 15px 0;
     font-size: 16px;
     padding: 0 10px;
     line-height: 2;
@@ -242,4 +243,25 @@
 .powerd{
     font-size: 14px;
     font-weight: bold
+}
+.card-body{
+  position: relative;
+  padding: 15px 10px 5px;
+  color: #000;
+  i{
+    position: absolute;
+    left:  10px;
+    font-size: 20px;
+    transform: translatey(-50%);
+    top: 50%;
+    cursor: pointer;;
+  }
+}
+.news-title{
+  font-size: 12px;
+  font-weight:bold;
+}
+.news-sub-title{
+  font-size: 12px;
+  color: $scondColor;
 }

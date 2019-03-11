@@ -1,15 +1,18 @@
 // start the home page
 
 nav{
-    height: 40px;
+    height: 50px;
     width: 100%;
     position: relative;
     background: $mainColor;
+    .logo{
+
+      img{
+        margin: 0 10px;
+      }
+    }
     .text-white{
         font-size: 14px;
-        @media (max-width:340px) {
-            font-size: 10px;
-        }
     }
     form{
         input[type="search"]{
@@ -48,7 +51,14 @@ nav{
     }
 
 }
-
+.hide{
+    font-size: 24px;
+    cursor: pointer;
+    color: $mainColor;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
 .drop{
     width: 260px;
     position: absolute;

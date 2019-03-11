@@ -31,7 +31,8 @@ body {
   overflow-y: hidden; }
 
 .font-16 {
-  font-size: 16px !important; }
+  font-size: 16px !important;
+  font-weight: bold; }
 
 a:hover {
   text-decoration: none; }
@@ -45,10 +46,10 @@ a:hover {
 
 .slick-dots li button:before {
   content: "";
-  width: 10px;
-  height: 10px;
-  border: 1px solid #fff;
-  background-color: #fff;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #ffffff42;
+  background-color: #ffffff42;
   border-radius: 50%;
   color: #fff;
   opacity: 1; }

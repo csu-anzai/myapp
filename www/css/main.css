@@ -31,7 +31,8 @@ body {
   overflow-y: hidden; }
 
 .font-16 {
-  font-size: 16px !important; }
+  font-size: 16px !important;
+  font-weight: bold; }
 
 a:hover {
   text-decoration: none; }
@@ -45,10 +46,10 @@ a:hover {
 
 .slick-dots li button:before {
   content: "";
-  width: 10px;
-  height: 10px;
-  border: 1px solid #fff;
-  background-color: #fff;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #ffffff42;
+  background-color: #ffffff42;
   border-radius: 50%;
   color: #fff;
   opacity: 1; }
@@ -57,15 +58,14 @@ a:hover {
   bottom: -40px; }
 
 nav {
-  height: 40px;
+  height: 50px;
   width: 100%;
   position: relative;
   background: #2f3b96; }
+  nav .logo img {
+    margin: 0 10px; }
   nav .text-white {
     font-size: 14px; }
-    @media (max-width: 340px) {
-      nav .text-white {
-        font-size: 10px; } }
   nav form input[type="search"] {
     width: 100%;
     height: 100%;
@@ -87,6 +87,14 @@ nav {
     color: #fff; }
   nav .search li i {
     color: #fef200; }
+
+.hide {
+  font-size: 24px;
+  cursor: pointer;
+  color: #2f3b96;
+  position: absolute;
+  right: 15px;
+  top: 10px; }
 
 .drop {
   width: 260px;
@@ -122,6 +130,8 @@ nav {
   position: relative;
   font-weight: bold;
   color: #000; }
+  .member-login .custom-list:hover {
+    color: #2f3b96; }
 .member-login .content .menus button {
   background: transparent;
   border: 2px solid #2f3b96;
@@ -166,9 +176,6 @@ nav {
     width: 150px;
     height: 100px; }
 
-.media-body p {
-  font-size: 12px;
-  font-weight: bold; }
 .media-body span {
   position: absolute;
   bottom: 15px;
@@ -188,10 +195,10 @@ nav {
 .menu {
   width: 260px;
   background: #fff;
-  height: 100%;
+  height: calc(100% - 50px);
   position: fixed;
   right: -260px;
-  top: 0;
+  top: 50px;
   z-index: 999;
   overflow: auto;
   transition: all .4s; }
@@ -200,8 +207,7 @@ nav {
   right: 0 !important; }
 
 .content {
-  background: #fff;
-  padding-top: 40px !important; }
+  background: #fff; }
   .content .head {
     font-size: 17px;
     font-weight: bold; }
@@ -241,7 +247,7 @@ nav {
     position: static; }
 
 .news-d {
-  margin: 20px 0;
+  margin: 15px 0;
   font-size: 16px;
   padding: 0 10px;
   line-height: 2; }
@@ -249,5 +255,25 @@ nav {
 .powerd {
   font-size: 14px;
   font-weight: bold; }
+
+.card-body {
+  position: relative;
+  padding: 15px 10px 5px;
+  color: #000; }
+  .card-body i {
+    position: absolute;
+    left: 10px;
+    font-size: 20px;
+    transform: translatey(-50%);
+    top: 50%;
+    cursor: pointer; }
+
+.news-title {
+  font-size: 12px;
+  font-weight: bold; }
+
+.news-sub-title {
+  font-size: 12px;
+  color: #9a9a9a; }
 
 /*# sourceMappingURL=main.css.map */

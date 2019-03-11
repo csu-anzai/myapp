@@ -31,7 +31,8 @@ body {
   overflow-y: hidden; }
 
 .font-16 {
-  font-size: 16px !important; }
+  font-size: 16px !important;
+  font-weight: bold; }
 
 a:hover {
   text-decoration: none; }
@@ -45,10 +46,10 @@ a:hover {
 
 .slick-dots li button:before {
   content: "";
-  width: 10px;
-  height: 10px;
-  border: 1px solid #fff;
-  background-color: #fff;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #ffffff42;
+  background-color: #ffffff42;
   border-radius: 50%;
   color: #fff;
   opacity: 1; }
@@ -57,15 +58,14 @@ a:hover {
   bottom: -40px; }
 
 nav {
-  height: 40px;
+  height: 50px;
   width: 100%;
   position: relative;
   background: #2f3b96; }
+  nav .logo img {
+    margin: 0 10px; }
   nav .text-white {
     font-size: 14px; }
-    @media (max-width: 340px) {
-      nav .text-white {
-        font-size: 10px; } }
   nav form input[type="search"] {
     width: 100%;
     height: 100%;
@@ -88,6 +88,14 @@ nav {
   nav .search li i {
     color: #fef200; }
 
+.hide {
+  font-size: 24px;
+  cursor: pointer;
+  color: #2f3b96;
+  position: absolute;
+  right: 15px;
+  top: 10px; }
+
 .drop {
   width: 260px;
   position: absolute;
@@ -104,20 +112,38 @@ header {
   position: relative; }
   header .slider {
     width: 100%;
-    height: 400px;
+    height: 300px;
     position: relative; }
+    header .slider::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 200px;
+      background: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0), #000);
+      width: 100%; }
     header .slider p {
       padding: 10px;
-      color: #fff;
       font-size: 20px;
-      background: rgba(47, 59, 150, 0.8);
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%; }
+      bottom: 10px;
+      right: 10px;
+      width: 80%;
+      z-index: 99; }
+      header .slider p a {
+        color: #fff;
+      }
   header .slick-dots {
-    bottom: 120px; }
+    left: 20px;
+    bottom: 28px;
+    text-align: center;
+    border-radius: 11px;
+    width: 81px;
+    border: 1px solid #ffffff42; }
+
+.slick-dots li {
+  margin: 0;
+  width: 10px;
+  height: 10px; }
 
 .slick-dotted.slick-slider {
   margin-bottom: 0; }
