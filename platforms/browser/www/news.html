@@ -68,6 +68,11 @@
             <div class="news-items" id="posts" >
 
             </div>
+
+
+            <div class="w-100 text-center">
+                <button class="all-news" id="load-more" >المزيد</button>
+            </div>
         </div>
     </div>
 
@@ -81,6 +86,7 @@
     <!-- Js External Fills -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
+    <script src="js/scroll.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
         document.addEventListener("deviceready", function(){
@@ -88,39 +94,46 @@
           }, false);
 
 
-      $(document).ready(function () {
+    $(document).ready(function () {
 
-            $("#search").on("submit", function(e){
-              e.preventDefault();
-              app.news(this[0].value);
-            });
+        sessionStorage.currentPage = 1;
 
-            $("body, html").on("click", function () {
-                $("nav form input[type='search']").removeClass("d-block");
-                $(".drop").slideUp();
-            });
-
-            $(".mdi-magnify").on("click", function (e) {
-                $("nav form input[type='search']").addClass("d-block");
-                e.stopPropagation();
-            });
-
-            $("nav form input[type='search']").on("click", function (e) {
-                e.stopPropagation();
-            });
-
-            $(".mdi-dots-horizontal").on("click", function (e) {
-                    $(".drop").slideToggle();
-                    e.stopImmediatePropagation();
-                });
-                $(".drop").on("click", function (e) {
-                    e.stopPropagation();
-            });
-
-            $(".mdi-arrow-right").on("click", function (){
-                window.history.back();
-            });
+        $('#load-more').on('click', function() {
+            app.news(window.location.hash.substr(1), ++sessionStorage.currentPage);
         });
+        
+
+        $("#search").on("submit", function(e){
+          e.preventDefault();
+          app.news(this[0].value);
+        });
+
+        $("body, html").on("click", function () {
+            $("nav form input[type='search']").removeClass("d-block");
+            $(".drop").slideUp();
+        });
+
+        $(".mdi-magnify").on("click", function (e) {
+            $("nav form input[type='search']").addClass("d-block");
+            e.stopPropagation();
+        });
+
+        $("nav form input[type='search']").on("click", function (e) {
+            e.stopPropagation();
+        });
+
+        $(".mdi-dots-horizontal").on("click", function (e) {
+                $(".drop").slideToggle();
+                e.stopImmediatePropagation();
+            });
+            $(".drop").on("click", function (e) {
+                e.stopPropagation();
+        });
+
+        $(".mdi-arrow-right").on("click", function (){
+            window.history.back();
+        });
+    }); 
 
     </script>
 </body>

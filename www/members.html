@@ -19,43 +19,59 @@
 
 </head>
 
-<body>
-
-
-    <div class="mobile-container pt-0 w-100">
+<body class="d-flex justify-content-center align-items-center">
+    <div class="text-center w-100 mh-100" >
         <nav class="position-relative">
             <div class="container-fluid h-100">
-
-                <div class="container-fluid h-100">
-                    <div class="row h-100">
-                        <div class="col-4 h-100">
-                            <div class="toggle-menu h-100 d-flex align-items-center">
-                                <i class="mdi mdi-arrow-right"></i>
-                            </div>
+                <div class="row h-100">
+                    <div class="col-2 h-100">
+                        <div class="toggle-menu h-100 d-flex align-items-center">
+                            <i class="mdi mdi-arrow-right"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
-        <div class="member-login">
-            <div class="container-fluid">
-                <div class="content">
-                    <iframe style="width:100%; height: 100%; border: none" src="http://www.tantasc.net/members"></iframe>
-                    <div class="powerd text-center">
-                         <a href="https://digitalharbor.me/">  <img src="img/digitalharbor.png" width="120px" alt="digital harbor"> </a>
-                         <span class="d-block"> version 1.0.0 </span>
-                    </div>
+        <div class="login-page">
+            <div class="content">
+                <div class="logo">
+                    <img src="img/logo/logo.png" alt="logo">
+                    <h3>دخول الاعضاء</h3>
+                </div>
+                <div class="login-form">
+                    <form  id="login" method="post" action="http://tantasc.net/members/login.php">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <input type="text" placeholder="رقم العضوية" class="custom-botton w-100 d-block">
+                                </div>
+                                <div class="col-12">
+                                    <input type="password" placeholder="الرقم السري" class="custom-botton w-100 d-block">
+                                </div>
+                                <div class="col-12">
+                                    <input type="submit" value="تسجيل الدخول" class="custom-botton w-100 d-block">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="cordova.js"></script>
-    <script src="js/index.js"></script>
+
     <!-- Js External Fills -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".mdi-arrow-right").on("click", function (){
+                window.history.back();
+            });
+        });
+    </script>
 </body>
 
 </html>

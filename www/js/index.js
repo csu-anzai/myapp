@@ -87,7 +87,7 @@ var app = {
   },
 
 
-  news: function(search=false) {
+  news: function(search=false, page=1) {
     var param = "";
     search = search ? search : window.location.hash.substr(1);
     if(search){
@@ -95,19 +95,12 @@ var app = {
       window.location = "news.html#" + search;
     }
 
-    if(!sessionStorage.page){
-      sessionStorage.page = 1;
-    }
-
-    param += "&page=" + sessionStorage.page;
+    param += "&page=" + page;
 
     navigator.splashscreen.show();
-      // axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&per_page=10" + param).then(function(response) {
-      axios.get("test/data.json").then(function(response) {
+      axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&per_page=10" + param).then(function(response) {
+      // axios.get("test/data.json").then(function(response) {
         var posts = response.data;
-
-        if(sessionStorage.page == 1){
-        }
 
         posts.forEach(post => {
           var date = moment(post.date);
@@ -115,16 +108,16 @@ var app = {
           var a = date.format('a') == 'am' ? 'صباحا' : 'مساءا';
 
           document.getElementById("posts").innerHTML += "<a href='post.html#" + post.id + "' class='card mb-4'>" +
-            "<img class='card-img-top' src='" + post._embedded['wp:featuredmedia'][0].source_url + "' height='150px' alt='Card image cap' >" +
-            "<div class='card-body'>" +
-              "<h4 class='card-title news-title'>" + post.title.rendered + "</h4>" +
-              "<p class='card-text news-sub-title'>" +
-              "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span><br />" +
-              "</p>" +
-              "<i class='mdi mdi-share'></i>" +
-            "</div>" +
-          "</a>";
-        });
+              "<img class='card-img-top' src='" + post._embedded['wp:featuredmedia'][0].source_url + "' height='150px' alt='Card image cap' >" +
+              "<div class='card-body'>" +
+                "<h4 class='card-title news-title'>" + post.title.rendered + "</h4>" +
+                "<p class='card-text news-sub-title'>" +
+                "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span><br />" +
+                "</p>" +
+                "<i class='mdi mdi-share'></i>" +
+              "</div>" +
+            "</a>";
+          });
 
         }).then(function(){
           navigator.splashscreen.hide();
