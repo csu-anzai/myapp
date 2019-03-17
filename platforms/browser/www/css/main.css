@@ -245,12 +245,17 @@ nav {
   color: #000; }
   .news .caption .media .media-body span {
     position: static; }
-
+.news .caption .media .media-body .font-16{
+  font-size: 18px !important;
+}
+.img-250{
+  height: 250px;
+}
 .news-d {
   margin: 15px 0;
   font-size: 16px;
   padding: 0 10px;
-  line-height: 2; }
+  line-height: 1.7; }
 
 .powerd {
   font-size: 14px;
