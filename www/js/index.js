@@ -17,44 +17,44 @@
  * under the License.
  */
 var app = {
+
+
   home: function() {
-    console.log('show splash screen');
     navigator.splashscreen.show();
 
 
       // get posts for slider
       const data1 = new Promise(function(resolve, reject){
-        console.log('sent slider posts request');
-        // axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories=77&per_page=5").then(function(response) {
-        axios.get("test/data.json").then(function(response) {
+
+        axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories=77&per_page=5").then(function(response) {
+        // axios.get("test/data.json").then(function(response) {     // For testing
           
-        console.log('recieved slider posts request');
           response.data.forEach(post => {
+
             document.getElementById("slider").innerHTML += "<div class='slider slider1 '>" +
               "<img src='" + post._embedded['wp:featuredmedia'][0].source_url + "' alt='slider-img' class='w-100 h-100'>" +
               "<p><a href='post.html#" + post.id + "' >" + post.title.rendered + "</a></p>" +
             "</div>";
+
           });
+
         }).then(function(){
+
           $('.slick').slick({
                 dots: true,
                 arrows: false,
                 rtl: true
             });
-        console.log('finish render posts');
+
           resolve(true);
         });
       });
 
       // get posts for latest news
-
       const data2 = new Promise(function(resolve, reject){
-        console.log('sent body posts request');
-        moment().format();
-        // axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories_exclude=77&per_page=3").then(function(response) {
-        axios.get("test/data.json").then(function(response) {
-        
-        console.log('recieved body posts request');
+
+        axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories_exclude=77&per_page=3").then(function(response) {
+        // axios.get("test/data.json").then(function(response) {     // For testing
 
           response.data.forEach(post => {
 
@@ -72,16 +72,16 @@ var app = {
                 "<i class='mdi mdi-share'></i>" +
               "</div>" +
             "</a>";
+
           });
+
         }).then(() => {
-          console.log('finish render body posts');
           resolve(true);
         });
       });
 
       Promise.all([data1, data2]).then(function(values){
         navigator.splashscreen.hide();
-        console.log('finish two requests and hide splash screen')
       });
     
   },
@@ -89,7 +89,7 @@ var app = {
 
   news: function(search=false, page=1) {
     var param = "";
-    search = search ? search : window.location.hash.substr(1);
+    search = search ? search : decodeURI(window.location.hash.substr(1));
     if(search){
       param = "&search=" + search;
       window.location = "news.html#" + search;
@@ -99,7 +99,7 @@ var app = {
 
     navigator.splashscreen.show();
       axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&per_page=10" + param).then(function(response) {
-      // axios.get("test/data.json").then(function(response) {
+      // axios.get("test/data.json").then(function(response) {     // For testing
         var posts = response.data;
 
         posts.forEach(post => {
@@ -123,11 +123,13 @@ var app = {
           navigator.splashscreen.hide();
         });
   },
+
+
   post: function(id) {
 
     navigator.splashscreen.show();
-      // axios.get("http://www.tantasc.net/wp-json/wp/v2/posts/" + id + "?_embed").then(function(response) {
-      axios.get("test/post.json").then(function(response) {
+      axios.get("http://www.tantasc.net/wp-json/wp/v2/posts/" + id + "?_embed").then(function(response) {
+      // axios.get("test/post.json").then(function(response) {     // For testing
         var post = response.data;
 
           document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
@@ -141,8 +143,8 @@ var app = {
   },
   page: function(id) {
     navigator.splashscreen.show();
-      // axios.get("http://www.tantasc.net/wp-json/wp/v2/pages/" + id).then(function(response) {
-      axios.get("test/page.json").then(function(response) {
+      axios.get("http://www.tantasc.net/wp-json/wp/v2/pages/" + id).then(function(response) {
+      // axios.get("test/page.json").then(function(response) {     // For testing
         var page = response.data;
 
           // document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
