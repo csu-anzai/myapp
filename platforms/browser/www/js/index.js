@@ -1,19 +1,21 @@
 // Add to index.js or the first page that loads with your app.
 // For Intel XDK and please add this to your app.js.
 
-// document.addEventListener('deviceready', function () {
-//   // Enable to debug issues.
-//   // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+document.addEventListener('deviceready', function () {
+  // Enable to debug issues.
+  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
   
-//   var notificationOpenedCallback = function(jsonData) {
-//     console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-//   };
+  var notificationOpenedCallback = function(jsonData) {
+    console.log(JSON.stringify(jsonData).notification.payload.additionalData.post_id);
+    window.location = 'news.html#' + JSON.stringify(jsonData).notification.payload.additionalData.post_id;
+  };
 
-//   window.plugins.OneSignal
-//     .startInit("ae305c36-5d9d-4e34-8154-924268faea8c")
-//     .handleNotificationOpened(notificationOpenedCallback)
-//     .endInit();
-// }, false);
+  window.plugins.OneSignal
+    .startInit("ae305c36-5d9d-4e34-8154-924268faea8c")
+    .handleNotificationOpened(notificationOpenedCallback)
+    .inFocusDisplaying('None')
+    .endInit();
+}, false);
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -42,8 +44,8 @@ var app = {
       // get posts for slider
       const data1 = new Promise(function(resolve, reject){
 
-        // axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories=77&per_page=5").then(function(response) {
-        axios.get("test/data.json").then(function(response) {     // For testing
+        axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories=77&per_page=5").then(function(response) {
+        // axios.get("test/data.json").then(function(response) {     // For testing
           
           response.data.forEach(post => {
 
@@ -69,8 +71,8 @@ var app = {
       // get posts for latest news
       const data2 = new Promise(function(resolve, reject){
 
-        // axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories_exclude=77&per_page=3").then(function(response) {
-        axios.get("test/data.json").then(function(response) {     // For testing
+        axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories_exclude=77&per_page=3").then(function(response) {
+        // axios.get("test/data.json").then(function(response) {     // For testing
 
           response.data.forEach(post => {
 

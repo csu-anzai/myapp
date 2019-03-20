@@ -39,6 +39,9 @@
     },
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
     }
   },
   "dependent_plugins": {
