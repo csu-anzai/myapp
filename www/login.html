@@ -57,7 +57,7 @@
 
     <nav class="position-relative">
         <form id="search" >
-            <input type="search" placeholder="ابحث الان">
+            <input type="search" placeholder="البحث">
         </form>
         <div class="container-fluid h-100">
             <div class="row h-100">
@@ -84,6 +84,53 @@
     </nav>
     <iframe src="http://tantasc.net/members/login.php" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
 </div>
+<script src="cordova.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/index.js"></script>
+    <!-- Js External Fills -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script type="text/javascript" >
+      document.addEventListener("deviceready", function(){
+        app.home();
+      }, false);
+
+      $(document).ready(function () {
+
+            $("#search").on("submit", function(e){
+              e.preventDefault();
+              window.location = 'news.html#' + this[0].value;
+            });
+
+            $(".toggle-menu i").on("click", function (e) {
+                $(".menu").toggleClass("rigth")
+                e.stopPropagation();
+                $("body").toggleClass("no-scroll");
+            });
+
+            $(".menu").on("click", function (e) {
+                e.stopPropagation();
+            });
+            $("body, html").on("click", function () {
+                $(".menu").removeClass("rigth");
+                $(this).removeClass("no-scroll");
+                $("nav form input[type='search']").removeClass("d-block");
+            });
+
+            $(".mdi-magnify").on("click", function (e) {
+                $("nav form input[type='search']").addClass("d-block");
+                e.stopPropagation();
+            });
+            $("nav form input[type='search']").on("click", function (e) {
+                e.stopPropagation();
+            });
+
+        });
+
+    </script>
 </body>
 
 </html>

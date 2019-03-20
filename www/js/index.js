@@ -1,20 +1,19 @@
 // Add to index.js or the first page that loads with your app.
 // For Intel XDK and please add this to your app.js.
-var data = {};
+
 document.addEventListener('deviceready', function () {
   // Enable to debug issues.
   // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
   
   var notificationOpenedCallback = function(jsonData) {
-    data = jsonData;
-    console.log(data.notification.payload.additionalData.post_id);
+    var data = jsonData;
     window.location = 'post.html#' + data.notification.payload.additionalData.post_id;
   };
 
   window.plugins.OneSignal
     .startInit("ae305c36-5d9d-4e34-8154-924268faea8c")
     .handleNotificationOpened(notificationOpenedCallback)
-    .inFocusDisplaying('None')
+    .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
     .endInit();
 }, false);
 /*
@@ -126,16 +125,20 @@ var app = {
 
           var a = date.format('a') == 'am' ? 'صباحا' : 'مساءا';
 
-          document.getElementById("posts").innerHTML += "<a href='post.html#" + post.id + "' class='card mb-4'>" +
+          document.getElementById("posts").innerHTML += "<div class='card mb-4'>" +
+              "<a href='post.html#" + post.id + "' >" +
               "<img class='card-img-top' src='" + post._embedded['wp:featuredmedia'][0].source_url + "' height='150px' alt='Card image cap' >" +
+              "</a>" +
               "<div class='card-body'>" +
+                "<a href='post.html#" + post.id + "'>" +
                 "<h4 class='card-title news-title'>" + post.title.rendered + "</h4>" +
                 "<p class='card-text news-sub-title'>" +
                 "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span><br />" +
                 "</p>" +
-                "<i class='mdi mdi-share'></i>" +
+                "</a>" +
+                "<i class='mdi mdi-share' onclick=\"app.share('" + post.link + "')\" ></i>" +
               "</div>" +
-            "</a>";
+            "</div>";
           });
 
         }).then(function(){
@@ -154,6 +157,9 @@ var app = {
           document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
           document.getElementById("title").innerHTML = post.title.rendered;
           document.getElementById("article").innerHTML = post.content.rendered;
+          $('#share').click(function(e){
+            app.share(post.link);
+          });
 
         }).then(function(){
           navigator.splashscreen.hide();
@@ -169,9 +175,30 @@ var app = {
           // document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
           document.getElementById("title").innerHTML = page.title.rendered;
           document.getElementById("article").innerHTML = page.content.rendered;
+          $('#share').click(function(e){
+            app.share(page.link);
+          });
 
         }).then(function(){
           navigator.splashscreen.hide();
         });
+  },
+
+  share: function(url){
+    // this is the complete list of currently supported params you can pass to the plugin (all optional)
+    var options = {
+      url: url
+    };
+
+    var onSuccess = function(result) {
+      console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+      console.log("Shared to app: " + result.app); // On Android result.app since plugin version 5.4.0 this is no longer empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+    };
+
+    var onError = function(msg) {
+      console.log("Sharing failed with message: " + msg);
+    };
+
+    window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError); 
   }
 };

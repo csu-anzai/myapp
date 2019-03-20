@@ -418,6 +418,14 @@ module.exports = [
         "id": "cordova-plugin-splashscreen.SplashScreenProxy",
         "pluginId": "cordova-plugin-splashscreen",
         "runs": true
+    },
+    {
+        "file": "plugins/nl.madebymark.share/www/share.js",
+        "id": "nl.madebymark.share.Share",
+        "pluginId": "nl.madebymark.share",
+        "clobbers": [
+            "window.navigator.share"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -436,7 +444,8 @@ module.exports.metadata =
     "cordova-plugin-network-information": "1.3.4",
     "cordova-plugin-vibration": "2.1.6",
     "cordova-plugin-splashscreen": "5.0.2",
-    "cordova-plugin-whitelist": "1.3.3"
+    "cordova-plugin-whitelist": "1.3.3",
+    "nl.madebymark.share": "0.1.1"
 }
 // BOTTOM OF METADATA
 });

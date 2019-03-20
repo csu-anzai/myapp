@@ -6,8 +6,8 @@ document.addEventListener('deviceready', function () {
   // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
   
   var notificationOpenedCallback = function(jsonData) {
-    console.log(JSON.stringify(jsonData).notification.payload.additionalData.post_id);
-    window.location = 'news.html#' + JSON.stringify(jsonData).notification.payload.additionalData.post_id;
+    var data = jsonData;
+    window.location = 'post.html#' + data.notification.payload.additionalData.post_id;
   };
 
   window.plugins.OneSignal
@@ -132,7 +132,7 @@ var app = {
                 "<p class='card-text news-sub-title'>" +
                 "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span><br />" +
                 "</p>" +
-                "<i class='mdi mdi-share'></i>" +
+                "<i class='mdi mdi-share' onclick='app.share(" + post.link + ")' ></i>" +
               "</div>" +
             "</a>";
           });
@@ -172,5 +172,23 @@ var app = {
         }).then(function(){
           navigator.splashscreen.hide();
         });
+  },
+
+  share: function(url){
+    // this is the complete list of currently supported params you can pass to the plugin (all optional)
+    var options = {
+      url: url
+    };
+
+    var onSuccess = function(result) {
+      console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+      console.log("Shared to app: " + result.app); // On Android result.app since plugin version 5.4.0 this is no longer empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+    };
+
+    var onError = function(msg) {
+      console.log("Sharing failed with message: " + msg);
+    };
+
+    window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError); 
   }
 };

@@ -42,6 +42,9 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "nl.madebymark.share": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
     }
   },
   "dependent_plugins": {
