@@ -1,21 +1,21 @@
 // Add to index.js or the first page that loads with your app.
 // For Intel XDK and please add this to your app.js.
 
-document.addEventListener('deviceready', function () {
-  // Enable to debug issues.
-  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-  
-  var notificationOpenedCallback = function(jsonData) {
-    var data = jsonData;
-    window.location = 'post.html#' + data.notification.payload.additionalData.post_id;
-  };
-
-  window.plugins.OneSignal
-    .startInit("ae305c36-5d9d-4e34-8154-924268faea8c")
-    .handleNotificationOpened(notificationOpenedCallback)
-    .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
-    .endInit();
-}, false);
+// document.addEventListener('deviceready', function () {
+//   // Enable to debug issues.
+//   // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+//
+//   var notificationOpenedCallback = function(jsonData) {
+//     var data = jsonData;
+//     window.location = 'post.html#' + data.notification.payload.additionalData.post_id;
+//   };
+//
+//   window.plugins.OneSignal
+//     .startInit("ae305c36-5d9d-4e34-8154-924268faea8c")
+//     .handleNotificationOpened(notificationOpenedCallback)
+//     .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
+//     .endInit();
+// }, false);
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -46,7 +46,7 @@ var app = {
 
         axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories=77&per_page=5").then(function(response) {
         // axios.get("test/data.json").then(function(response) {     // For testing
-          
+
           response.data.forEach(post => {
 
             document.getElementById("slider").innerHTML += "<div class='slider slider1 '>" +
@@ -101,7 +101,7 @@ var app = {
       Promise.all([data1, data2]).then(function(values){
         navigator.splashscreen.hide();
       });
-    
+
   },
 
 
@@ -199,6 +199,6 @@ var app = {
       console.log("Sharing failed with message: " + msg);
     };
 
-    window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError); 
+    window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
   }
 };
