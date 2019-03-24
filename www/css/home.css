@@ -48,8 +48,8 @@ a:hover {
   content: "";
   width: 8px;
   height: 8px;
-  border: 1px solid #ffffff42;
-  background-color: #ffffff42;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   color: #fff;
   opacity: 1; }
@@ -138,7 +138,7 @@ header {
     text-align: center;
     border-radius: 11px;
     width: 81px;
-    border: 1px solid #ffffff42; }
+    border: 1px solid rgba(255, 255, 255, 0.4); }
 
 .slick-dots li {
   margin: 0;
@@ -152,4 +152,19 @@ header {
   position: relative;
 }
 
+#loading {
+  position: fixed;
+  width: 100%;
+  height: calc(100vh - 50px);
+  top: 50px;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+}
+#loading img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+}
 /*# sourceMappingURL=home.css.map */

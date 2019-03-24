@@ -4,20 +4,13 @@
 // document.addEventListener('deviceready', function () {
 //   // Enable to debug issues.
 //   // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-<<<<<<< HEAD
-//
-=======
-  
->>>>>>> master
+
+
 //   var notificationOpenedCallback = function(jsonData) {
 //     var data = jsonData;
 //     window.location = 'post.html#' + data.notification.payload.additionalData.post_id;
 //   };
-<<<<<<< HEAD
-//
-=======
 
->>>>>>> master
 //   window.plugins.OneSignal
 //     .startInit("ae305c36-5d9d-4e34-8154-924268faea8c")
 //     .handleNotificationOpened(notificationOpenedCallback)
@@ -46,8 +39,7 @@ var app = {
 
 
   home: function() {
-    navigator.splashscreen.show();
-
+    $('#loading').show();
 
       // get posts for slider
       const data1 = new Promise(function(resolve, reject){
@@ -107,13 +99,17 @@ var app = {
       });
 
       Promise.all([data1, data2]).then(function(values){
-        navigator.splashscreen.hide();
+        $('#loading').hide();
       });
 
   },
 
 
   news: function(search=false, page=1) {
+
+    //show loading gif
+    $('#loading').show();
+    
     var param = "";
     search = search ? search : decodeURI(window.location.hash.substr(1));
     if(search){
@@ -123,7 +119,6 @@ var app = {
 
     param += "&page=" + page;
 
-    navigator.splashscreen.show();
       axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&per_page=10" + param).then(function(response) {
       // axios.get("test/data.json").then(function(response) {     // For testing
         var posts = response.data;
@@ -150,14 +145,16 @@ var app = {
           });
 
         }).then(function(){
-          navigator.splashscreen.hide();
+          $('#loading').hide();
         });
   },
 
 
   post: function(id) {
 
-    navigator.splashscreen.show();
+    //show loading gif
+    $('#loading').show();
+
       axios.get("http://www.tantasc.net/wp-json/wp/v2/posts/" + id + "?_embed").then(function(response) {
       // axios.get("test/post.json").then(function(response) {     // For testing
         var post = response.data;
@@ -170,12 +167,15 @@ var app = {
           });
 
         }).then(function(){
-          navigator.splashscreen.hide();
+          $('#loading').hide();
         });
 
   },
   page: function(id) {
-    navigator.splashscreen.show();
+
+    // show loading gif
+    $('#loading').show();
+
       axios.get("http://www.tantasc.net/wp-json/wp/v2/pages/" + id).then(function(response) {
       // axios.get("test/page.json").then(function(response) {     // For testing
         var page = response.data;
@@ -188,7 +188,7 @@ var app = {
           });
 
         }).then(function(){
-          navigator.splashscreen.hide();
+          $('#loading').hide();
         });
   },
 
@@ -199,8 +199,7 @@ var app = {
     };
 
     var onSuccess = function(result) {
-      console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
-      console.log("Shared to app: " + result.app); // On Android result.app since plugin version 5.4.0 this is no longer empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+      
     };
 
     var onError = function(msg) {
