@@ -20,68 +20,32 @@
 </head>
 
 <body class="d-flex justify-content-center align-items-center">
+    <div id="loading" ><img src="img/loading.gif" /></div>
     <div style="width: 100%;" >
-    <div class="member-login menu">
-    
-        <div class="container-fluid">
-            <div class="content">
-                <div class="img text-center">
-                    <img src="img/logo/logo.png" width="100px">
-                </div>
-                <div class="menus">
-                    <button type="" onclick="window.location = 'login.html'" class="custom-botton d-block w-100">دخول الاعضاء</button>
-
-
-                    <!-- --------------------------- -->
-
-                    <div class="menu-list text-right">
-                        <a href="page.html#5007" class="custom-list"> عن النادى </a>
-                    </div>
-
-                    <!-- -------------------------- -->
-
-                    <div class="menu-list text-right">
-                        <a href="page.html#5007" class="custom-list"> تاريخ النادى </a>
-                    </div>
-
-                    <!-- --------------------------- -->
-                </div>
-                <div class="powerd text-center">
-                     <a href="https://digitalharbor.me/">  <img src="img/digitalharbor.png" width="120px" >  </a>
-                     <span class="d-block"> version 1.0.0 </span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <nav class="position-relative">
-        <form id="search" >
-            <input type="search" placeholder="البحث">
-        </form>
-        <div class="container-fluid h-100">
+    <nav class="fixed-top">
+          <div class="container-fluid h-100">
             <div class="row h-100">
-                <div class="col-2 h-100">
-                    <div class="toggle-menu h-100 d-flex align-items-center">
-                        <i class="mdi mdi-menu"></i>
-                    </div>
+              <div class="col-2 h-100">
+                <div class="toggle-menu h-100 d-flex align-items-center">
+                  <i class="mdi mdi-arrow-right"></i>
                 </div>
-                <div class="col-8 h-100">
-                    <div class="logo h-100 d-flex justify-content-center align-items-center">
-                        <img src="img/logo/tanta-clup.jpg" alt="Tanta" width="25px" height="25px">
-                        <span class="text-white"> نادى طنطا الرياضى </span>
-                    </div>
+              </div>
+              <div class="col-8 h-100">
+                <div class="logo h-100 d-flex justify-content-center align-items-center">
+                  <img src="img/logo/tanta-clup.jpg" alt="logo" width="25px" height="25px">
+                  <span class="text-white"> نادى طنطا الرياضى </span>
                 </div>
-                <div class="col-2 h-100">
-                    <div class="h-100 search">
-                        <ul class=" h-100 position-relative d-flex justify-content-end align-items-center">
-                            <li> <i class="mdi mdi-magnify"> </i> </li>
-                        </ul>
-                    </div>
+              </div>
+              <div class="col-2 h-100">
+                <div class="h-100 search">
+                    <ul class=" h-100 position-relative d-flex justify-content-end align-items-center">
+                        <li> <i class="mdi mdi-magnify"> </i> </li>
+                    </ul>
                 </div>
+              </div>
             </div>
-        </div>
-    </nav>
+          </div>
+      </nav>
     <iframe src="http://tantasc.net/members/login.php" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
 </div>
     <script src="cordova.js"></script>
@@ -93,23 +57,14 @@
 
       $(document).ready(function () {
 
+        $('#loading').hide();
+
             $("#search").on("submit", function(e){
               e.preventDefault();
               window.location = 'news.html#' + this[0].value;
             });
 
-            $(".toggle-menu i").on("click", function (e) {
-                $(".menu").toggleClass("rigth")
-                e.stopPropagation();
-                $("body").toggleClass("no-scroll");
-            });
-
-            $(".menu").on("click", function (e) {
-                e.stopPropagation();
-            });
             $("body, html").on("click", function () {
-                $(".menu").removeClass("rigth");
-                $(this).removeClass("no-scroll");
                 $("nav form input[type='search']").removeClass("d-block");
             });
 
@@ -119,6 +74,10 @@
             });
             $("nav form input[type='search']").on("click", function (e) {
                 e.stopPropagation();
+            });
+
+            $(".mdi-arrow-right").on("click", function (){
+                window.history.back();
             });
 
         });

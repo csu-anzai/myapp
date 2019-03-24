@@ -80,16 +80,20 @@ var app = {
 
             var a = date.format('a') == 'am' ? 'صباحا' : 'مساءا';
 
-            document.getElementById("posts").innerHTML += "<a href='post.html#" + post.id + "' class='card mb-4'>" +
+            document.getElementById("posts").innerHTML += "<div class='card mb-4'>" +
+              "<a href='post.html#" + post.id + "' >" +
               "<img class='card-img-top' src='" + post._embedded['wp:featuredmedia'][0].source_url + "' height='150px' alt='Card image cap' >" +
+              "</a>" +
               "<div class='card-body'>" +
+                "<a class='news-title d-inline-block' href='post.html#" + post.id + "'>" +
                 "<h4 class='card-title news-title'>" + post.title.rendered + "</h4>" +
                 "<p class='card-text news-sub-title'>" +
                 "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span><br />" +
                 "</p>" +
-                "<i class='mdi mdi-share'></i>" +
+                "</a>" +
+                "<i class='mdi mdi-share' onclick=\"app.share('" + post.link + "')\" ></i>" +
               "</div>" +
-            "</a>";
+            "</div>";
 
           });
 
@@ -133,7 +137,7 @@ var app = {
               "<img class='card-img-top' src='" + post._embedded['wp:featuredmedia'][0].source_url + "' height='150px' alt='Card image cap' >" +
               "</a>" +
               "<div class='card-body'>" +
-                "<a href='post.html#" + post.id + "'>" +
+                "<a class='news-title d-inline-block' href='post.html#" + post.id + "'>" +
                 "<h4 class='card-title news-title'>" + post.title.rendered + "</h4>" +
                 "<p class='card-text news-sub-title'>" +
                 "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span><br />" +
@@ -159,10 +163,15 @@ var app = {
       // axios.get("test/post.json").then(function(response) {     // For testing
         var post = response.data;
 
+        var date = moment(post.date);
+
+        var a = date.format('a') == 'am' ? 'صباحا' : 'مساءا';
+
           document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
           document.getElementById("title").innerHTML = post.title.rendered;
+          document.getElementById("date").innerHTML = date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a;
           document.getElementById("article").innerHTML = post.content.rendered;
-          $('#share').click(function(e){
+          $(".mdi-share-variant").on("click", function(e){
             app.share(post.link);
           });
 
@@ -183,7 +192,7 @@ var app = {
           // document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
           document.getElementById("title").innerHTML = page.title.rendered;
           document.getElementById("article").innerHTML = page.content.rendered;
-          $('#share').click(function(e){
+          $(".mdi-share-variant").on("click", function(e){
             app.share(page.link);
           });
 
@@ -199,7 +208,7 @@ var app = {
     };
 
     var onSuccess = function(result) {
-      
+
     };
 
     var onError = function(msg) {
