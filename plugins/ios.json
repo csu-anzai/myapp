@@ -1,0 +1,64 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-camera": {
+      "CAMERA_USAGE_DESCRIPTION": " ",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-geolocation": {
+      "GEOLOCATION_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-media-capture": {
+      "CAMERA_USAGE_DESCRIPTION": " ",
+      "MICROPHONE_USAGE_DESCRIPTION": " ",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "nl.madebymark.share": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "me.digitalharbor.tantasc"
+    }
+  }
+}

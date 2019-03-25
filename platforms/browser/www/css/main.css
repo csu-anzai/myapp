@@ -1,4 +1,5 @@
 body {
+  padding-top: 50px;
   line-height: 1.6;
   background-color: #eee;
   font-family: 'Cairo', sans-serif;
@@ -31,8 +32,9 @@ body {
   overflow-y: hidden; }
 
 .font-16 {
-  font-size: 16px !important;
-  font-weight: bold; }
+  font-size: 18px !important;
+  font-weight: bold;
+}
 
 a:hover {
   text-decoration: none; }
@@ -48,8 +50,8 @@ a:hover {
   content: "";
   width: 8px;
   height: 8px;
-  border: 1px solid #ffffff42;
-  background-color: #ffffff42;
+  border: 1px solid #fef200;
+  background-color: #fef200;
   border-radius: 50%;
   color: #fff;
   opacity: 1; }
@@ -190,12 +192,13 @@ nav {
   display: inline-block;
   margin-bottom: 30px;
   padding: 5px 40px;
-  color: #000;
-  font-weight: bold;
+  color: #2f3b96;
+  font-weight: 400;
+  font-size: 14px;
 
   border: 1px solid rgba(0, 0, 0, 0.125) }
   .all-news:hover{
-    color: #000;
+    color: #2f3b96;
   }
 
 @media (max-width: 380px) {
@@ -245,7 +248,8 @@ nav {
         font-weight: bold; }
   .content .slick-dots li button:before {
     border: 1px solid #9a9a9a;
-    background-color: #9a9a9a; }
+    background-color: #fef200,66; }
+
   .content .slick-dots li.slick-active button:before {
     border: 1px solid #9a9a9a !important;
     background: transparent; }
@@ -262,9 +266,9 @@ nav {
 }
 .news-d {
   margin: 15px 0;
-  font-size: 16px;
-  padding: 0 10px;
-  line-height: 1.7; }
+  line-height: 1.6;
+  font-size: 14px !important;
+  font-weight: 400;}
 
 .powerd {
   font-size: 14px;
@@ -294,7 +298,7 @@ nav {
   font-size: 12px;
   color: #9a9a9a; }
 
-  
+
 
 #loading {
   position: fixed;
