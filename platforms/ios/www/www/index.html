@@ -29,6 +29,12 @@
   <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src *;
+    style-src * 'unsafe-inline';
+    script-src * 'unsafe-inline';
+    media-src *; img-src * data:;
+    font-src *;" />
   <link href="css/google-cairo.css" rel="stylesheet">
   <link rel="stylesheet" href="css/materialdesignicons.min.css">
   <link rel="stylesheet" href="css/bootstrapA.css">
@@ -41,7 +47,6 @@
 </head>
 
 <body class="bg-white">
-    <div id="loading" ><img src="img/loading.gif" /></div>
 
   <!--  Expanded menu  -->
   <div class="member-login menu">
@@ -54,39 +59,18 @@
         <div class="menus">
           <button type="" onclick="window.location = 'login.html'" class="custom-botton d-block w-100">دخول الاعضاء</button>
 
-            <div class="menu-list text-right">
-                <a href="page.html#6089" class="custom-list"> عن النادى </a>
-            </div>
 
-            <!-- --------------------------- -->
+          <!-- --------------------------- -->
 
-            <div class="menu-list text-right">
-                <a href="page.html#5007" class="custom-list"> تاريخ النادى </a>
-            </div>
+          <div class="menu-list text-right">
+            <a href="page.html#5007" class="custom-list"> عن النادى </a>
+          </div>
 
-            <!-- -------------------------- -->
+          <!-- -------------------------- -->
 
-            <div class="menu-list text-right">
-                <a href="page.html#5005" class="custom-list"> رؤساء النادى </a>
-            </div>
-
-            <!-- -------------------------- -->
-
-            <div class="menu-list text-right">
-                <a href="news.html?cat=24" class="custom-list"> كرة القدم </a>
-            </div>
-
-            <!-- -------------------------- -->
-
-            <div class="menu-list text-right">
-                <a href="news.html?cat=80" class="custom-list"> كرة اليد </a>
-            </div>
-
-            <!-- -------------------------- -->
-
-            <div class="menu-list text-right">
-                <a href="news.html?cat=16" class="custom-list"> العاب القوى </a>
-            </div>
+          <div class="menu-list text-right">
+            <a href="page.html#5007" class="custom-list"> تاريخ النادى </a>
+          </div>
 
           <!-- --------------------------- -->
         </div>
@@ -101,7 +85,7 @@
 
   <nav class="fixed-top">
     <form id="search">
-      <input type="search" placeholder="البحث" autofocus>
+      <input type="search" placeholder="البحث">
     </form>
     <div class="container-fluid h-100">
       <div class="row h-100">
@@ -150,37 +134,37 @@
     <div class="catogery p-2">
       <div class="row text-center">
           <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=24">
+            <a href="">
               <img src="img/soccer-ball-variant.png" alt="football">
               <span class="d-block">كرة قدم</span>
             </a>
           </div>
           <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=23">
+            <a href="">
               <img src="img/basketball-player-scoring.png" alt="basketball-player-scoring">
               <span class="d-block">كرة سله</span>
             </a>
           </div>
           <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=18">
+            <a href="">
               <img src="img/tennis-ball.png" alt="tennis-ball">
               <span class="d-block">تنس</span>
             </a>
           </div>
           <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=80">
+            <a href="">
               <img src="img/handball.png" alt="handball">
               <span class="d-block">كرة يد</span>
             </a>
           </div>
           <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=25">
+            <a href="">
               <img src="img/volleyball.png" alt="volleyball">
               <span class="d-block">كرة طائره</span>
             </a>
           </div>
           <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=16">
+            <a href="">
               <img src="img/gym.png" alt="gym">
               <span class="d-block">العاب قوي</span>
             </a>
@@ -245,4 +229,5 @@
     });
   </script>
 </body>
+
 </html>
