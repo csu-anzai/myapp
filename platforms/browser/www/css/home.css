@@ -124,14 +124,15 @@ header {
       width: 100%; }
     header .slider p {
       padding: 10px;
-      font-size: 15px;
+      font-size: 17px;
+      font-weight:700;
       position: absolute;
-      bottom: 10px;
+      bottom: 38px;
       right: 10px;
       width: 80%;
       z-index: 99; }
-      header .slider p a {
-        color: #fff;
+    header .slider p a {
+      color: #fff;
       }
   header .slick-dots {
     left: 20px;

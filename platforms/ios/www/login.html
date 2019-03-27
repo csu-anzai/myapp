@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>member-login</title>
+    <!-- External fills -->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+</head>
+
+<body class="d-flex justify-content-center align-items-center">
+    <div id="loading" ><img src="img/loading.gif" /></div>
+    <div style="width: 100%;" >
+    <nav class="fixed-top">
+          <div class="container-fluid h-100">
+            <div class="row h-100">
+              <div class="col-2 h-100">
+                <div class="toggle-menu h-100 d-flex align-items-center">
+                  <i class="mdi mdi-arrow-right"></i>
+                </div>
+              </div>
+              <div class="col-8 h-100">
+                <div class="logo h-100 d-flex justify-content-center align-items-center">
+                  <img src="img/logo/tanta-clup.jpg" alt="logo" width="25px" height="25px">
+                  <span class="text-white"> نادى طنطا الرياضى </span>
+                </div>
+              </div>
+              <div class="col-2 h-100">
+                <div class="h-100 search">
+                    <ul class=" h-100 position-relative d-flex justify-content-end align-items-center">
+                        <li> <i class="mdi mdi-magnify"> </i> </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+      </nav>
+    <iframe src="http://tantasc.net/members/login.php" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
+</div>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <!-- Js External Fills -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" >
+
+      $(document).ready(function () {
+
+        $('#loading').hide();
+
+            $("#search").on("submit", function(e){
+              e.preventDefault();
+              window.location = 'news.html#' + this[0].value;
+            });
+
+            $("body, html").on("click", function () {
+                $("nav form input[type='search']").removeClass("d-block");
+            });
+
+            $(".mdi-magnify").on("click", function (e) {
+                $("nav form input[type='search']").addClass("d-block");
+                e.stopPropagation();
+            });
+            $("nav form input[type='search']").on("click", function (e) {
+                e.stopPropagation();
+            });
+
+            $(".mdi-arrow-right").on("click", function (){
+                window.history.back();
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
