@@ -50,8 +50,13 @@ a:hover {
   content: "";
   width: 8px;
   height: 8px;
+<<<<<<< HEAD
   border: 1px solid rgba(254, 242, 0, 0.48);
   background-color: rgb(254, 242, 0);
+=======
+  border: 1px solid #fef200;
+  background-color: #fef200;
+>>>>>>> 69950128af41695b463b7548bdb64aaba23af8ab
   border-radius: 50%;
   color: #fff;
   opacity: 1; }
@@ -193,7 +198,7 @@ nav {
   margin-bottom: 30px;
   padding: 5px 40px;
   color: #2f3b96;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 14px;
 
   border: 1px solid rgba(0, 0, 0, 0.125) }
@@ -266,10 +271,16 @@ nav {
 }
 .news-d {
   margin: 15px 0;
+<<<<<<< HEAD
   padding: 0 10px;
   line-height: 1.5;
   font-size: 14px !important;
   font-weight: 500;}
+=======
+  line-height: 1.6;
+  font-size: 14px !important;
+  font-weight: 400;}
+>>>>>>> 69950128af41695b463b7548bdb64aaba23af8ab
 
 .powerd {
   font-size: 14px;
