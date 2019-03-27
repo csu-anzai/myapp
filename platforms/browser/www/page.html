@@ -22,7 +22,7 @@
 
 <body>
 
-    <nav class="position-relative">
+      <nav class="fixed-top">
         <div class="container-fluid h-100">
             <div class="container-fluid h-100">
                 <div class="row h-100">
@@ -57,6 +57,7 @@
                 <div class="media mb-4">
                     <div class="media-body">
                         <article id="article" class="news-d">
+                          
                         </article>
                     </div>
                 </div>
@@ -89,7 +90,7 @@
         $("nav form input[type='search']").on("click", function (e) {
             e.stopPropagation();
         });
-        
+
         $(".mdi-share-variant").on("click", function (e) {
             $(".drop").slideToggle();
             e.stopImmediatePropagation();
@@ -103,7 +104,7 @@
         $(".mdi-arrow-right").on("click", function (){
             window.history.back();
         });
-        
+
     </script>
 </body>
 

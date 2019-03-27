@@ -1,4 +1,5 @@
 body {
+  padding-top: 50px;
   line-height: 1.6;
   background-color: #eee;
   font-family: 'Cairo', sans-serif;
@@ -31,8 +32,9 @@ body {
   overflow-y: hidden; }
 
 .font-16 {
-  font-size: 16px !important;
-  font-weight: bold; }
+  font-size: 18px !important;
+  font-weight: bold;
+}
 
 a:hover {
   text-decoration: none; }
@@ -48,8 +50,8 @@ a:hover {
   content: "";
   width: 8px;
   height: 8px;
-  border: 1px solid #ffffff42;
-  background-color: #ffffff42;
+  border: 1px solid #fef200;
+  background-color: #fef200;
   border-radius: 50%;
   color: #fff;
   opacity: 1; }
@@ -190,12 +192,13 @@ nav {
   display: inline-block;
   margin-bottom: 30px;
   padding: 5px 40px;
-  color: #000;
-  font-weight: bold;
+  color: #2f3b96;
+  font-weight: 400;
+  font-size: 14px;
 
   border: 1px solid rgba(0, 0, 0, 0.125) }
   .all-news:hover{
-    color: #000;
+    color: #2f3b96;
   }
 
 @media (max-width: 380px) {
@@ -245,7 +248,8 @@ nav {
         font-weight: bold; }
   .content .slick-dots li button:before {
     border: 1px solid #9a9a9a;
-    background-color: #9a9a9a; }
+    background-color: #fef200,66; }
+
   .content .slick-dots li.slick-active button:before {
     border: 1px solid #9a9a9a !important;
     background: transparent; }
@@ -261,20 +265,22 @@ nav {
   height: 250px;
 }
 .news-d {
-  margin: 15px 0;
-  font-size: 16px;
-  padding: 0 10px;
-  line-height: 1.7; }
+  margin: 15px 0 !important;
+  line-height: 1.6 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;}
 
 .powerd {
   font-size: 14px;
   font-weight: bold; }
-
+.card{
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.125);
+}
 .card-body {
   position: relative;
   padding: 15px 10px 5px;
   border:none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.125);
+
   color: #000; }
   .card-body i {
     position: absolute;
@@ -286,10 +292,39 @@ nav {
 
 .news-title {
   font-size: 13px;
-  font-weight: bold; }
+  font-weight: bold;
+  color: #000;
+}
 
 .news-sub-title {
   font-size: 12px;
   color: #9a9a9a; }
 
+
+
+#loading {
+  position: fixed;
+  width: 100%;
+  height: calc(100vh - 50px);
+  top: 50px;
+  left: 0;
+  background: #fff;
+  z-index: 999;
+}
+#loading img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% , -50%);
+}
+.comments{
+  background-color: #005;
+  color: #fff;
+}
+.comments .head h3{
+  color: #fef200
+}
+.dark .disqus-footer__link{
+  color: #fef200 !important;
+}
 /*# sourceMappingURL=main.css.map */

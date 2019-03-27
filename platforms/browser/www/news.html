@@ -34,7 +34,7 @@
 <body>
 
 
-    <nav class="position-relative">
+      <nav class="fixed-top">
         <div class="container-fluid h-100">
         <form id="search" >
             <input type="search" placeholder="البحث">
@@ -101,7 +101,7 @@
         $('#load-more').on('click', function() {
             app.news(window.location.hash.substr(1), ++sessionStorage.currentPage);
         });
-        
+
 
         $("#search").on("submit", function(e){
           e.preventDefault();
@@ -133,7 +133,7 @@
         $(".mdi-arrow-right").on("click", function (){
             window.history.back();
         });
-    }); 
+    });
 
     </script>
 </body>

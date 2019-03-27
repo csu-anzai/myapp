@@ -48,11 +48,16 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/main.css">
   <title>Tanta Sporting Club</title>
+  <style>
+.comment__header .author a {
+    color: #288ce4 !important;
+}
+</style>
 </head>
 
 <body>
 
-  <nav class="position-relative">
+    <nav class="fixed-top">
     <div class="container-fluid h-100">
       <div class="container-fluid h-100">
         <div class="row h-100">
@@ -79,22 +84,7 @@
     </div>
   </nav>
 
-  <!-- <div class="news p-0">
-        <div class="container-fluid p-0">
-            <div class="news-img">
-                <img id="img" src="" class="img-responsive w-100 img-250" alt="img">
-            </div>
-            <div class="caption pr-3 pl-3 pt-2">
-                <div class="media mb-4">
-                    <div class="media-body">
-                        <p id="title" class="font-16"></p>
-                        <article id="article" class="news-d p-0 text-left">
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+
 
 <div class="p-2">
   <div class="card">
@@ -107,6 +97,68 @@
   </div>
 </div>
 
+<div class="related-posts p-2 ">
+
+  <div class="head d-flex justify-content-between mb-3">
+    <h3 class="font-weight-bold">الاخبار المتعلقة</h3>
+  </div>
+  <div class="bg-white p-2">
+    <a href="" class="media position-relative mb-4">
+        <img class="d-flex mr-3 mb-3" src="img/bg/bg-3.jpg" alt="Generic placeholder image">
+        <div class="media-body">
+            <p>هدف شيكابالا في نادى طنطا الرياضى امس ..</p>
+            <span> الثلاثاء 10/10/2017 - 8.00 مساءا </span>
+        </div>
+    </a>
+    <a href="" class="media position-relative mb-4">
+        <img class="d-flex mr-3 mb-3" src="img/bg/bg-3.jpg" alt="Generic placeholder image">
+        <div class="media-body">
+            <p>هدف شيكابالا في نادى طنطا الرياضى امس ..</p>
+            <span> الثلاثاء 10/10/2017 - 8.00 مساءا </span>
+        </div>
+    </a>
+    <a href="" class="media position-relative mb-4">
+        <img class="d-flex mr-3 mb-3" src="img/bg/bg-3.jpg" alt="Generic placeholder image">
+        <div class="media-body">
+            <p>هدف شيكابالا في نادى طنطا الرياضى امس ..</p>
+            <span> الثلاثاء 10/10/2017 - 8.00 مساءا </span>
+        </div>
+    </a>
+    <a href="" class="media position-relative mb-4">
+        <img class="d-flex mr-3 mb-3" src="img/bg/bg-3.jpg" alt="Generic placeholder image">
+        <div class="media-body">
+            <p>هدف شيكابالا في نادى طنطا الرياضى امس ..</p>
+            <span> الثلاثاء 10/10/2017 - 8.00 مساءا </span>
+        </div>
+    </a>
+  </div>
+</div>
+<div class="comments m-2 p-2">
+
+  <div class="head">
+    <h3 class="font-weight-bold mr-2"> اترك تعليقاً<i class="mdi mdi-comment-outline ml-2"></i></h3>
+    <p class="mt-3 mb-2">لن يتم نشر عنوان بريدك الإلكتروني. الحقول الإلزامية مشار إليها بـ *</p>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://http-localhost-3000-post-html-6022.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
   <script type="text/javascript" src="cordova.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
   <script src="js/moment.js"></script>
