@@ -172,11 +172,6 @@ header {
   top: 50%;
   transform: translate(-50% , -50%);
 }
-
-.post-card {
-  min-height: calc(100vh - 50px - 1rem);
-}
-
 .catogery{
   background: #fff;
 }
@@ -196,8 +191,6 @@ header {
 }
 .related-posts .bg-white{
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.125);
-  border-radius: .25rem;
-  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 .related-posts .media::after{
   content: "";

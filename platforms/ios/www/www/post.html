@@ -56,38 +56,42 @@
 </head>
 
 <body>
-    <div id="loading" ><img src="img/loading.gif" /></div>
 
-  <nav class="fixed-top">
+    <nav class="fixed-top">
     <div class="container-fluid h-100">
-      <div class="row h-100">
-        <div class="col-2 h-100">
-          <div class="toggle-menu h-100 d-flex align-items-center">
-            <i class="mdi mdi-arrow-right"></i>
+      <div class="container-fluid h-100">
+        <div class="row h-100">
+          <div class="col-2 h-100">
+            <div class="toggle-menu h-100 d-flex align-items-center">
+              <i class="mdi mdi-arrow-right"></i>
+            </div>
           </div>
-        </div>
-        <div class="col-8 h-100">
-          <div class="logo h-100 d-flex justify-content-center align-items-center">
-            <img src="img/logo/tanta-clup.jpg" alt="logo" width="25px" height="25px">
-            <span class="text-white"> نادى طنطا الرياضى </span>
+          <div class="col-8 h-100">
+            <div class="logo h-100 d-flex justify-content-center align-items-center">
+              <img src="img/logo/tanta-clup.jpg" alt="logo" width="25px" height="25px">
+              <span class="text-white"> نادى طنطا الرياضى </span>
+            </div>
           </div>
-        </div>
-        <div class="col-2 h-100">
-          <div class="h-100 search" >
-            <ul class=" h-100 d-flex justify-content-end align-items-center">
-              <li> <i  id="share" class="mdi mdi-share-variant"> </i></li>
-            </ul>
+          <div class="col-2 h-100">
+            <div class="h-100 search" id="share">
+              <ul class=" h-100 d-flex justify-content-end align-items-center">
+                <li> <i class="mdi mdi-share-variant"> </i></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </nav>
+
+
+
 <div class="p-2">
-  <div class="card post-card">
+  <div class="card">
     <img id="img" src="" class="img-responsive w-100 img-250" alt="img">
     <div class="card-body">
       <h4 id="title" class="font-16"></h4>
-      <p class="card-text news-sub-title mt-1  position-relative"><span id='date' ></span><br></p>
+      <p class="card-text news-sub-title mt-1  position-relative"><span>الأحد 2019/3/17 - 6:12 مساءا</span><br></p>
       <p id="article" class="news-d p-0 text-left"></p>
     </div>
   </div>
@@ -168,6 +172,25 @@ s.setAttribute('data-timestamp', +new Date());
       app.post(window.location.hash.substr(1));
     }, false);
 
+    $("body, html").on("click", function() {
+      $("nav form input[type='search']").removeClass("d-block");
+      $(".drop").slideUp();
+    });
+
+    $(".mdi-magnify").on("click", function(e) {
+      $("nav form input[type='search']").addClass("d-block");
+      e.stopPropagation();
+    });
+    $("nav form input[type='search']").on("click", function(e) {
+      e.stopPropagation();
+    });
+    $(".mdi-share-variant").on("click", function(e) {
+      $(".drop").slideToggle();
+      e.stopImmediatePropagation();
+    });
+    $(".drop").on("click", function(e) {
+      e.stopPropagation();
+    });
     $(".mdi-arrow-right").on("click", function() {
       window.history.back();
     });

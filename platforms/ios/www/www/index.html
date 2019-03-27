@@ -29,6 +29,12 @@
   <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src *;
+    style-src * 'unsafe-inline';
+    script-src * 'unsafe-inline';
+    media-src *; img-src * data:;
+    font-src *;" />
   <link href="css/google-cairo.css" rel="stylesheet">
   <link rel="stylesheet" href="css/materialdesignicons.min.css">
   <link rel="stylesheet" href="css/bootstrapA.css">
@@ -41,7 +47,6 @@
 </head>
 
 <body class="bg-white">
-    <div id="loading" ><img src="img/loading.gif" /></div>
 
   <!--  Expanded menu  -->
   <div class="member-login menu">
@@ -54,39 +59,18 @@
         <div class="menus">
           <button type="" onclick="window.location = 'login.html'" class="custom-botton d-block w-100">دخول الاعضاء</button>
 
-            <div class="menu-list text-right">
-                <a href="page.html#6089" class="custom-list"> عن النادى </a>
-            </div>
 
-            <!-- --------------------------- -->
+          <!-- --------------------------- -->
 
-            <div class="menu-list text-right">
-                <a href="page.html#5007" class="custom-list"> تاريخ النادى </a>
-            </div>
+          <div class="menu-list text-right">
+            <a href="page.html#5007" class="custom-list"> عن النادى </a>
+          </div>
 
-            <!-- -------------------------- -->
+          <!-- -------------------------- -->
 
-            <div class="menu-list text-right">
-                <a href="page.html#5005" class="custom-list"> رؤساء النادى </a>
-            </div>
-
-            <!-- -------------------------- -->
-
-            <div class="menu-list text-right">
-                <a href="page.html#5479" class="custom-list"> فريق كرة القدم </a>
-            </div>
-
-            <!-- -------------------------- -->
-
-            <div class="menu-list text-right">
-                <a href="page.html#5456" class="custom-list"> تاريخ التنس </a>
-            </div>
-
-            <!-- -------------------------- -->
-
-            <div class="menu-list text-right">
-                <a href="page.html#5458" class="custom-list"> تاريخ العاب القوى </a>
-            </div>
+          <div class="menu-list text-right">
+            <a href="page.html#5007" class="custom-list"> تاريخ النادى </a>
+          </div>
 
           <!-- --------------------------- -->
         </div>
@@ -101,7 +85,7 @@
 
   <nav class="fixed-top">
     <form id="search">
-      <input type="search" placeholder="البحث" autofocus>
+      <input type="search" placeholder="البحث">
     </form>
     <div class="container-fluid h-100">
       <div class="row h-100">
@@ -245,4 +229,5 @@
     });
   </script>
 </body>
+
 </html>

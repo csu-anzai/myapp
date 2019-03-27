@@ -49,13 +49,8 @@ a:hover {
   content: "";
   width: 8px;
   height: 8px;
-<<<<<<< HEAD
-  border: 1px solid rgba(254, 242, 0, 0.48);
-  background-color: rgb(254, 242, 0);
-=======
   border: 1px solid rgba(255, 255, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.4);
->>>>>>> style
   border-radius: 50%;
   color: #fff;
   opacity: 1; }
@@ -177,13 +172,11 @@ header {
   top: 50%;
   transform: translate(-50% , -50%);
 }
-<<<<<<< HEAD
 
 .post-card {
   min-height: calc(100vh - 50px - 1rem);
 }
 
-=======
 .catogery{
   background: #fff;
 }
@@ -203,6 +196,8 @@ header {
 }
 .related-posts .bg-white{
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.125);
+  border-radius: .25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 .related-posts .media::after{
   content: "";
@@ -230,5 +225,4 @@ header {
 .privacy a{
   color: #fef200 !important;
 }
->>>>>>> style
 /*# sourceMappingURL=home.css.map */

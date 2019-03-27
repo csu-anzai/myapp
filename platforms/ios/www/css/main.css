@@ -50,13 +50,8 @@ a:hover {
   content: "";
   width: 8px;
   height: 8px;
-<<<<<<< HEAD
-  border: 1px solid rgba(254, 242, 0, 0.48);
-  background-color: rgb(254, 242, 0);
-=======
   border: 1px solid #fef200;
   background-color: #fef200;
->>>>>>> 69950128af41695b463b7548bdb64aaba23af8ab
   border-radius: 50%;
   color: #fff;
   opacity: 1; }
@@ -270,27 +265,22 @@ nav {
   height: 250px;
 }
 .news-d {
-  margin: 15px 0;
-<<<<<<< HEAD
-  padding: 0 10px;
-  line-height: 1.5;
+  margin: 15px 0 !important;
+  line-height: 1.6 !important;
   font-size: 14px !important;
-  font-weight: 500;}
-=======
-  line-height: 1.6;
-  font-size: 14px !important;
-  font-weight: 400;}
->>>>>>> 69950128af41695b463b7548bdb64aaba23af8ab
+  font-weight: 400 !important;}
 
 .powerd {
   font-size: 14px;
   font-weight: bold; }
-
+.card{
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.125);
+}
 .card-body {
   position: relative;
   padding: 15px 10px 5px;
   border:none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.125);
+
   color: #000; }
   .card-body i {
     position: absolute;
@@ -303,7 +293,7 @@ nav {
 .news-title {
   font-size: 13px;
   font-weight: bold;
-  color: #000; 
+  color: #000;
 }
 
 .news-sub-title {
@@ -328,4 +318,14 @@ nav {
   transform: translate(-50% , -50%);
 }
 
+.comments{
+  background-color: #005;
+  color: #fff;
+}
+.comments .head h3{
+  color: #fef200
+}
+.dark .disqus-footer__link{
+  color: #fef200 !important;
+}
 /*# sourceMappingURL=main.css.map */
