@@ -4,12 +4,20 @@
 // document.addEventListener('deviceready', function () {
 //   // Enable to debug issues.
 //   // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+<<<<<<< HEAD
 //
+=======
+  
+>>>>>>> master
 //   var notificationOpenedCallback = function(jsonData) {
 //     var data = jsonData;
 //     window.location = 'post.html#' + data.notification.payload.additionalData.post_id;
 //   };
+<<<<<<< HEAD
 //
+=======
+
+>>>>>>> master
 //   window.plugins.OneSignal
 //     .startInit("ae305c36-5d9d-4e34-8154-924268faea8c")
 //     .handleNotificationOpened(notificationOpenedCallback)
