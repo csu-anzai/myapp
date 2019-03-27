@@ -90,10 +90,9 @@
     <script src="js/scroll.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-        document.addEventListener("deviceready", function(){
-            app.news();
-          }, false);
-
+    document.addEventListener("deviceready", function(){
+        app.news();
+      }, false);
 
     $(document).ready(function () {
 
@@ -102,7 +101,7 @@
         $('#load-more').on('click', function() {
             app.news(window.location.hash.substr(1), ++sessionStorage.currentPage);
         });
-        
+
 
         $("#search").on("submit", function(e){
           e.preventDefault();
@@ -134,7 +133,7 @@
         $(".mdi-arrow-right").on("click", function (){
             window.history.back();
         });
-    }); 
+    });
 
     </script>
 </body>

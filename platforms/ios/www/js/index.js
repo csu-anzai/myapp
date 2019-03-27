@@ -91,7 +91,7 @@ var app = {
                 "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span><br />" +
                 "</p>" +
                 "</a>" +
-                "<i class='mdi mdi-share' onclick=\"app.share('" + post.link + "')\" ></i>" +
+                "<i class='mdi mdi-share-variant' onclick=\"app.share('" + post.link + "')\" ></i>" +
               "</div>" +
             "</div>";
 
@@ -117,13 +117,22 @@ var app = {
     $('#loading').show();
     
     var param = "";
+    // handle page query string
+    param = "&page=" + page;
+
+    // handle search query string
     search = search ? search : decodeURI(window.location.hash.substr(1));
     if(search){
-      param = "&search=" + search;
+      param += "&search=" + search;
       window.location = "news.html#" + search;
     }
 
-    param += "&page=" + page;
+    //handle category query string
+    if(window.location.search){
+      let params = new URLSearchParams(document.location.search.substring(1));
+      param += "&categories=" + params.get('cat');
+    }
+
 
       axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&per_page=10" + param).then(function(response) {
       // axios.get("test/data.json").then(function(response) {     // For testing
@@ -145,7 +154,7 @@ var app = {
                 "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span><br />" +
                 "</p>" +
                 "</a>" +
-                "<i class='mdi mdi-share' onclick=\"app.share('" + post.link + "')\" ></i>" +
+                "<i class='mdi mdi-share-variant' onclick=\"app.share('" + post.link + "')\" ></i>" +
               "</div>" +
             "</div>";
           });
