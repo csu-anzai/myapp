@@ -145,7 +145,7 @@ var app = {
                 "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span><br />" +
                 "</p>" +
                 "</a>" +
-                "<i class='mdi mdi-share' onclick=\"app.share('" + post.link + "')\" ></i>" +
+                "<i class='mdi mdi-share-variant' onclick=\"app.share('" + post.link + "')\" ></i>" +
               "</div>" +
             "</div>";
           });
