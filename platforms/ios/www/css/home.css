@@ -196,11 +196,8 @@ header {
 }
 .related-posts .bg-white{
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.125);
-<<<<<<< HEAD
-=======
   border-radius: .25rem;
   border: 1px solid rgba(0, 0, 0, 0.125);
->>>>>>> c8138c6941f129e24241dd9cbc1d1c0288fe14f0
 }
 .related-posts .media::after{
   content: "";
