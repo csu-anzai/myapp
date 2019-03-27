@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
 
-
 </head>
 
 <body class="d-flex justify-content-center align-items-center">
@@ -46,7 +45,7 @@
             </div>
           </div>
       </nav>
-    <iframe src="http://tantasc.net/members/login.php" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
+    <iframe id="iframe" name="iframe" src="http://tantasc.net/members/login.php" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
 </div>
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
@@ -57,8 +56,10 @@
 
       $(document).ready(function () {
 
-        $('#loading').hide();
-
+            document.getElementById('iframe').onload = function(){
+              $('#loading').hide();
+            }
+            
             $("#search").on("submit", function(e){
               e.preventDefault();
               window.location = 'news.html#' + this[0].value;
