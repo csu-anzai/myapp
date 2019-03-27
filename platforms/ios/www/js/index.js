@@ -71,7 +71,7 @@ var app = {
       // get posts for latest news
       const data2 = new Promise(function(resolve, reject){
 
-        axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories_exclude=77&per_page=3").then(function(response) {
+        axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&categories_exclude=77&per_page=5").then(function(response) {
         // axios.get("test/data.json").then(function(response) {     // For testing
 
           response.data.forEach(post => {

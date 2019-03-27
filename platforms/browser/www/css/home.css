@@ -49,8 +49,8 @@ a:hover {
   content: "";
   width: 8px;
   height: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(254, 242, 0, 0.48);
+  background-color: rgb(254, 242, 0);
   border-radius: 50%;
   color: #fff;
   opacity: 1; }
@@ -168,6 +168,10 @@ header {
   left: 50%;
   top: 50%;
   transform: translate(-50% , -50%);
+}
+
+.post-card {
+  min-height: calc(100vh - 50px - 1rem);
 }
 
 /*# sourceMappingURL=home.css.map */

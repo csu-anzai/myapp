@@ -32,8 +32,9 @@ body {
   overflow-y: hidden; }
 
 .font-16 {
-  font-size: 16px !important;
-  font-weight: bold; }
+  font-size: 18px !important;
+  font-weight: bold;
+}
 
 a:hover {
   text-decoration: none; }
@@ -49,8 +50,8 @@ a:hover {
   content: "";
   width: 8px;
   height: 8px;
-  border: 1px solid #ffffff42;
-  background-color: #ffffff42;
+  border: 1px solid rgba(254, 242, 0, 0.48);
+  background-color: rgb(254, 242, 0);
   border-radius: 50%;
   color: #fff;
   opacity: 1; }
@@ -265,9 +266,10 @@ nav {
 }
 .news-d {
   margin: 15px 0;
-  font-size: 16px;
   padding: 0 10px;
-  line-height: 1.7; }
+  line-height: 1.5;
+  font-size: 14px !important;
+  font-weight: 500;}
 
 .powerd {
   font-size: 14px;
