@@ -51,12 +51,17 @@ a:hover {
   width: 8px;
   height: 8px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   border: 1px solid rgba(254, 242, 0, 0.48);
   background-color: rgb(254, 242, 0);
 =======
   border: 1px solid #fef200;
   background-color: #fef200;
 >>>>>>> 69950128af41695b463b7548bdb64aaba23af8ab
+=======
+  border: 1px solid #fef200;
+  background-color: #fef200;
+>>>>>>> style
   border-radius: 50%;
   color: #fff;
   opacity: 1; }
@@ -270,6 +275,7 @@ nav {
   height: 250px;
 }
 .news-d {
+<<<<<<< HEAD
   margin: 15px 0;
 <<<<<<< HEAD
   padding: 0 10px;
@@ -281,16 +287,24 @@ nav {
   font-size: 14px !important;
   font-weight: 400;}
 >>>>>>> 69950128af41695b463b7548bdb64aaba23af8ab
+=======
+  margin: 15px 0 !important;
+  line-height: 1.6 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;}
+>>>>>>> style
 
 .powerd {
   font-size: 14px;
   font-weight: bold; }
-
+.card{
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.125);
+}
 .card-body {
   position: relative;
   padding: 15px 10px 5px;
   border:none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.125);
+
   color: #000; }
   .card-body i {
     position: absolute;
@@ -303,7 +317,11 @@ nav {
 .news-title {
   font-size: 13px;
   font-weight: bold;
+<<<<<<< HEAD
   color: #000; 
+=======
+  color: #000;
+>>>>>>> style
 }
 
 .news-sub-title {
@@ -327,5 +345,18 @@ nav {
   top: 50%;
   transform: translate(-50% , -50%);
 }
+<<<<<<< HEAD
 
+=======
+.comments{
+  background-color: #005;
+  color: #fff;
+}
+.comments .head h3{
+  color: #fef200
+}
+.dark .disqus-footer__link{
+  color: #fef200 !important;
+}
+>>>>>>> style
 /*# sourceMappingURL=main.css.map */
