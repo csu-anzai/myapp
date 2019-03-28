@@ -118,6 +118,7 @@
     <script type="text/javascript" >
 
       function redirect(path){
+        $(".menu").removeClass("rigth");
         $('#loading').show();
         document.getElementById('iframe').src = 'http://tantasc.net/members-mobile/' + path;
       }
