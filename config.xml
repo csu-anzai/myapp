@@ -10,6 +10,8 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="16" />
+    <preference name="FullScreen" value="true" />
+    <preference name="OverrideUserAgent" value="Mozilla/5.0 My Browser" />
     <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
     <platform name="android">
         <icon qualifier="ldpi" src="www/res/icons/android/drawable-ldpi-icon.png" />
@@ -66,6 +68,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="*" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>

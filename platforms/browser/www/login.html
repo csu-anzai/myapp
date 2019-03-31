@@ -16,37 +16,99 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
 
-
 </head>
 
 <body class="d-flex justify-content-center align-items-center">
     <div id="loading" ><img src="img/loading.gif" /></div>
     <div style="width: 100%;" >
-    <nav class="fixed-top">
-          <div class="container-fluid h-100">
-            <div class="row h-100">
-              <div class="col-2 h-100">
-                <div class="toggle-menu h-100 d-flex align-items-center">
-                  <i class="mdi mdi-arrow-right"></i>
+      <div class="member-login menu">
+
+        <div class="container-fluid">
+          <div class="content">
+            <div class="img text-center">
+              <img src="img/logo/logo.png" width="100px">
+            </div>
+            <div class="menus">
+              <button type="" onclick="window.location = 'index.html'" class="custom-botton d-block w-100">الرئيسية</button>
+
+                <div class="menu-list text-right">
+                    <a href="#" onclick="redirect('index.php')" class="custom-list"> بياناتى </a>
                 </div>
-              </div>
-              <div class="col-8 h-100">
-                <div class="logo h-100 d-flex justify-content-center align-items-center">
-                  <img src="img/logo/tanta-clup.jpg" alt="logo" width="25px" height="25px">
-                  <span class="text-white"> نادى طنطا الرياضى </span>
+
+                <!-- --------------------------- -->
+
+                <div class="menu-list text-right">
+                    <a href="#" onclick="redirect('add_submember.php')" class="custom-list"> إضافة عضو فرعى </a>
                 </div>
-              </div>
-              <div class="col-2 h-100">
-                <div class="h-100 search">
-                    <ul class=" h-100 position-relative d-flex justify-content-end align-items-center">
-                        <li> <i class="mdi mdi-magnify"> </i> </li>
-                    </ul>
+
+                <!-- -------------------------- -->
+
+                <div class="menu-list text-right">
+                    <a href="#" onclick="redirect('birthday_party.php')" class="custom-list"> حجز عيد ميلاد </a>
                 </div>
-              </div>
+
+                <!-- -------------------------- -->
+
+                <div class="menu-list text-right">
+                    <a href="#" onclick="redirect('concert.php')" class="custom-list"> حجز حفل متفوقين </a>
+                </div>
+
+                <!-- -------------------------- -->
+
+                <div class="menu-list text-right">
+                    <a href="#" onclick="redirect('mosque_booking.php')" class="custom-list"> حجز مسجد </a>
+                </div>
+
+                <!-- -------------------------- -->
+
+                <div class="menu-list text-right">
+                    <a href="#" onclick="redirect('profile.php')" class="custom-list"> الملف الشخصى </a>
+                </div>
+
+                <!-- -------------------------- -->
+
+                <div class="menu-list text-right">
+                    <a href="#" onclick="redirect('logout.php')" class="custom-list"> تسجيل الخروج </a>
+                </div>
+
+              <!-- --------------------------- -->
+            </div>
+            <div class="powerd text-center mt-3">
+              <a href="https://digitalharbor.me/"> <img src="img/digitalharbor.png" width="120px"> </a>
+              <span class="d-block"> version 1.0.0 </span>
             </div>
           </div>
-      </nav>
-    <iframe src="http://tantasc.net/members/login.php" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
+        </div>
+      </div>
+
+    <nav class="fixed-top">
+    <form id="search">
+      <input type="search" placeholder="البحث" autofocus>
+    </form>
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <div class="col-2 h-100">
+          <div class="toggle-menu h-100 d-flex align-items-center">
+            <i class="mdi mdi-menu"></i>
+          </div>
+        </div>
+        <div class="col-8 h-100">
+          <div class="logo h-100 d-flex justify-content-center align-items-center">
+            <img src="img/logo/tanta-clup.jpg" alt="Tanta" width="25px" height="25px">
+            <span class="text-white"> نادى طنطا الرياضى </span>
+          </div>
+        </div>
+        <div class="col-2 h-100">
+          <div class="h-100 search">
+            <ul class=" h-100 position-relative d-flex justify-content-end align-items-center">
+              <li> <i class="mdi mdi-magnify"> </i> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <iframe id="iframe" name="iframe" src="http://tantasc.net/members-mobile/" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
 </div>
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
@@ -55,29 +117,44 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" >
 
+      function redirect(path){
+        $(".menu").removeClass("rigth");
+        $('#loading').show();
+        document.getElementById('iframe').src = 'http://tantasc.net/members-mobile/' + path;
+      }
+
       $(document).ready(function () {
 
-        $('#loading').hide();
-
-            $("#search").on("submit", function(e){
+            document.getElementById('iframe').onload = function(){
+              $('#loading').hide();
+            }
+            
+            $("#search").on("submit", function(e) {
               e.preventDefault();
               window.location = 'news.html#' + this[0].value;
             });
 
-            $("body, html").on("click", function () {
-                $("nav form input[type='search']").removeClass("d-block");
+            $(".toggle-menu i").on("click", function(e) {
+              $(".menu").toggleClass("rigth")
+              e.stopPropagation();
+              $("document ,body").toggleClass("no-scroll");
             });
 
-            $(".mdi-magnify").on("click", function (e) {
-                $("nav form input[type='search']").addClass("d-block");
-                e.stopPropagation();
+            $(".menu").on("click", function(e) {
+              e.stopPropagation();
             });
-            $("nav form input[type='search']").on("click", function (e) {
-                e.stopPropagation();
+            $("body, html").on("click", function() {
+              $(".menu").removeClass("rigth");
+              $(this).removeClass("no-scroll");
+              $("nav form input[type='search']").removeClass("d-block");
             });
 
-            $(".mdi-arrow-right").on("click", function (){
-                window.history.back();
+            $(".mdi-magnify").on("click", function(e) {
+              $("nav form input[type='search']").addClass("d-block");
+              e.stopPropagation();
+            });
+            $("nav form input[type='search']").on("click", function(e) {
+              e.stopPropagation();
             });
 
         });
