@@ -32,14 +32,14 @@
 </head>
 
 <body>
-    <div id="loading" ><img src="img/loading.gif" /></div>
+    <div id="loading"><img src="img/loading.gif" /></div>
 
 
     <nav class="fixed-top">
         <div class="container-fluid h-100">
-        <form id="search" >
-            <input type="search" placeholder="البحث">
-        </form>
+            <form id="search">
+                <input type="search" placeholder="البحث">
+            </form>
             <div class="container-fluid h-100">
                 <div class="row h-100">
                     <div class="col-2 h-100">
@@ -66,13 +66,13 @@
 
     <div class="news pt-3">
         <div class="container-fluid">
-            <div class="news-items" id="posts" >
+            <div class="news-items" id="posts">
 
             </div>
 
 
             <div class="w-100 text-center">
-                <button class="all-news" id="load-more" >المزيد</button>
+                <button class="all-news" id="load-more">المزيد</button>
             </div>
         </div>
     </div>
@@ -90,52 +90,51 @@
     <script src="js/scroll.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-        document.addEventListener("deviceready", function(){
+        document.addEventListener("deviceready", function() {
             app.news();
-          }, false);
+        }, false);
 
 
-    $(document).ready(function () {
+        $(document).ready(function() {
 
-        sessionStorage.currentPage = 1;
+            sessionStorage.currentPage = 1;
 
-        $('#load-more').on('click', function() {
-            app.news(window.location.hash.substr(1), ++sessionStorage.currentPage);
-        });
+            $('#load-more').on('click', function() {
+                app.news(window.location.hash.substr(1), ++sessionStorage.currentPage);
+            });
 
 
-        $("#search").on("submit", function(e){
-          e.preventDefault();
-          app.news(this[0].value);
-        });
+            $("#search").on("submit", function(e) {
+                e.preventDefault();
+                app.news(this[0].value);
+            });
 
-        $("body, html").on("click", function () {
-            $("nav form input[type='search']").removeClass("d-block");
-            $(".drop").slideUp();
-        });
+            $("body, html").on("click", function() {
+                $("nav form input[type='search']").removeClass("d-block");
+                $(".drop").slideUp();
+            });
 
-        $(".mdi-magnify").on("click", function (e) {
-            $("nav form input[type='search']").addClass("d-block");
-            e.stopPropagation();
-        });
+            $(".mdi-magnify").on("click", function(e) {
+                $("nav form input[type='search']").addClass("d-block");
+                e.stopPropagation();
+            });
 
-        $("nav form input[type='search']").on("click", function (e) {
-            e.stopPropagation();
-        });
+            $("nav form input[type='search']").on("click", function(e) {
+                e.stopPropagation();
+            });
 
-        $(".mdi-dots-horizontal").on("click", function (e) {
+            $(".mdi-dots-horizontal").on("click", function(e) {
                 $(".drop").slideToggle();
                 e.stopImmediatePropagation();
             });
-            $(".drop").on("click", function (e) {
+            $(".drop").on("click", function(e) {
                 e.stopPropagation();
-        });
+            });
 
-        $(".mdi-arrow-right").on("click", function (){
-            window.history.back();
+            $(".mdi-arrow-right").on("click", function() {
+                window.history.back();
+            });
         });
-    });
-
     </script>
 </body>
 
