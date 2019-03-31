@@ -1,22 +1,22 @@
 // Add to index.js or the first page that loads with your app.
 // For Intel XDK and please add this to your app.js.
 
-document.addEventListener('deviceready', function () {
-  // Enable to debug issues.
-  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+// document.addEventListener('deviceready', function () {
+//   // Enable to debug issues.
+//   // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
 
 
-  var notificationOpenedCallback = function(jsonData) {
-    var data = jsonData;
-    window.location = 'post.html#' + data.notification.payload.additionalData.post_id;
-  };
+//   var notificationOpenedCallback = function(jsonData) {
+//     var data = jsonData;
+//     window.location = 'post.html#' + data.notification.payload.additionalData.post_id;
+//   };
 
-  window.plugins.OneSignal
-    .startInit("ae305c36-5d9d-4e34-8154-924268faea8c")
-    .handleNotificationOpened(notificationOpenedCallback)
-    .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
-    .endInit();
-}, false);
+//   window.plugins.OneSignal
+//     .startInit("ae305c36-5d9d-4e34-8154-924268faea8c")
+//     .handleNotificationOpened(notificationOpenedCallback)
+//     .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
+//     .endInit();
+// }, false);
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file

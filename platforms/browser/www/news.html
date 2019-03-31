@@ -66,6 +66,22 @@
 
     <div class="news pt-3">
         <div class="container-fluid">
+            <div class="news-items">
+                <select id='cat' >
+                    <option value='0' >كل الأقسام</option>
+                    <option value='24' >كرة القدم</option>
+                    <option value='23' >كرة السلة</option>
+                    <option value='18' >تنس</option>
+                    <option value='80' >كرة يد</option>
+                    <option value='25' >كرة طائرة</option>
+                    <option value='16' >العاب قوي</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="news pt-3">
+        <div class="container-fluid">
             <div class="news-items" id="posts">
 
             </div>
@@ -90,18 +106,25 @@
     <script src="js/scroll.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-<<<<<<< HEAD
-        document.addEventListener("deviceready", function() {
-            app.news();
-        }, false);
-
-=======
     document.addEventListener("deviceready", function(){
         app.news();
       }, false);
->>>>>>> dev
 
         $(document).ready(function() {
+
+            // select option change
+            if(window.location.search){
+              let params = new URLSearchParams(document.location.search.substring(1));
+              document.getElementById('cat').value = params.get('cat');
+            }
+
+            $('#cat').on('change', function(){
+                if(this.value != 0){
+                    window.location.href = 'news.html?cat=' + this.value;
+                } else {
+                    window.location.href = 'news.html';
+                }
+            });
 
             sessionStorage.currentPage = 1;
 
