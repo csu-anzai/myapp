@@ -42,19 +42,20 @@
             </form>
             <div class="container-fluid h-100">
                 <div class="row h-100">
-                    <div class="col-2 h-100">
+                    <div class="col-3 h-100">
                         <div class="toggle-menu h-100 d-flex align-items-center">
                             <i class="mdi mdi-arrow-right"></i>
                         </div>
                     </div>
-                    <div class="col-8 h-100">
+                    <div class="col-6 h-100">
                         <div class="logo h-100 d-flex justify-content-center align-items-center">
                             <h3 class="text-white d-flex align-items-center"> <img src="img/logo/tanta-clup.jpg" class="d-inline-block" width="25px" height="25px" alt="logo"> أخبار النادى </h3>
                         </div>
                     </div>
-                    <div class="col-2 h-100">
+                    <div class="col-3 h-100">
                         <div class="h-100 search">
                             <ul class=" h-100 d-flex justify-content-end align-items-center">
+                                <li> <i class="mdi mdi-filter"> </i> </li>
                                 <li> <i class="mdi mdi-magnify"> </i> </li>
                             </ul>
                         </div>
@@ -66,22 +67,6 @@
 
     <div class="news pt-3">
         <div class="container-fluid">
-            <div class="news-items">
-                <select class="d-block w-100" id='cat' >
-                    <option value='0' >كل الأقسام</option>
-                    <option value='24' >كرة القدم</option>
-                    <option value='23' >كرة السلة</option>
-                    <option value='18' >تنس</option>
-                    <option value='80' >كرة يد</option>
-                    <option value='25' >كرة طائرة</option>
-                    <option value='16' >العاب قوي</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <div class="news pt-3">
-        <div class="container-fluid">
             <div class="news-items" id="posts">
 
             </div>
@@ -89,6 +74,81 @@
 
             <div class="w-100 text-center">
                 <button class="all-news" id="load-more">المزيد</button>
+            </div>
+        </div>
+    </div>
+
+<div class='menu-bottom' >
+    <div class="member-login categories-menu">
+
+        <div class="container-fluid">
+            <div class="content">
+                <div class="menus text-center">
+
+                    <div class="menu-list text-right">
+                        <h5 class='custom-list ' >الأقسام</h5>
+                    </div>
+
+                    <div id="categories" >
+
+                        <div class="menu-list text-right">
+                            <p href="news.html?cat=24" class="custom-list-bottom"> كرة القدم 
+                                <input class="float-right custom-checkbox" value="24" type="checkbox" />
+                            </p>
+                        </div>
+
+                                <!-- -------------------------- -->
+
+                        <div class="menu-list text-right">
+                            <p href="news.html?cat=80" class="custom-list-bottom"> كرة اليد 
+                                <input class="float-right" value="80" type="checkbox" />
+                            </p>
+                        </div>
+
+                                <!-- -------------------------- -->
+
+                        <div class="menu-list text-right">
+                            <p href="news.html?cat=16" class="custom-list-bottom"> العاب القوى 
+                                <input class="float-right" value="16" type="checkbox" />
+                            </p>
+                        </div>  
+
+                        <!-- -------------------------- -->
+
+                        <div class="menu-list text-right">
+                            <p href="news.html?cat=18" class="custom-list-bottom"> تنس 
+                                <input class="float-right" value="18" type="checkbox" />
+                            </p>
+                        </div>
+
+                          <!-- -------------------------- -->
+
+                        <div class="menu-list text-right">
+                            <p href="news.html?cat=25" class="custom-list-bottom"> كرة طائرة 
+                                <input class="float-right" value="25" type="checkbox" />
+                            </p>
+                        </div>
+
+                          <!-- -------------------------- -->
+
+                        <div class="menu-list text-right">
+                            <p href="news.html?cat=23" class="custom-list-bottom"> كرة السلة 
+                                <input class="float-right" value="23" type="checkbox" />
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="menu-list text-right">
+                        <a href="#" id='done' class='custom-list button' >تأكيد</a>
+                    </div> 
+
+                    <!-- --------------------------- -->
+                </div>
+                <div class="powerd text-center mt-3">
+                    <a href="https://digitalharbor.me/"> <img src="img/digitalharbor.png" width="120px"> </a>
+                    <span class="d-block"> version 1.0.0 </span>
+                </div>
             </div>
         </div>
     </div>
@@ -115,16 +175,11 @@
             // select option change
             if(window.location.search){
               let params = new URLSearchParams(document.location.search.substring(1));
-              document.getElementById('cat').value = params.get('cat');
+              var cats = params.get('cat').split(',');
+              cats.forEach(cat => {
+                $(`input[value="${cat}"]`).prop('checked',true);
+              })
             }
-
-            $('#cat').on('change', function(){
-                if(this.value != 0){
-                    window.location.href = 'news.html?cat=' + this.value;
-                } else {
-                    window.location.href = 'news.html';
-                }
-            });
 
             sessionStorage.currentPage = 1;
 
@@ -140,7 +195,6 @@
 
             $("body, html").on("click", function() {
                 $("nav form input[type='search']").removeClass("d-block");
-                $(".drop").slideUp();
             });
 
             $(".mdi-magnify").on("click", function(e) {
@@ -148,15 +202,21 @@
                 e.stopPropagation();
             });
 
-            $("nav form input[type='search']").on("click", function(e) {
+            $(".mdi-filter").on("click", function(e) {
+                $(".menu-bottom").toggleClass("show-categories");
                 e.stopPropagation();
             });
 
-            $(".mdi-dots-horizontal").on("click", function(e) {
-                $(".drop").slideToggle();
-                e.stopImmediatePropagation();
+            $('#done').on('click', function(){
+                var cats = [];
+                $.each($("input[type='checkbox']:checked"), function(){            
+                    cats.push($(this).val());
+                });
+
+                window.location.href = 'news.html?cat=' + cats;
             });
-            $(".drop").on("click", function(e) {
+
+            $("nav form input[type='search']").on("click", function(e) {
                 e.stopPropagation();
             });
 

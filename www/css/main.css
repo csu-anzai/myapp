@@ -284,6 +284,71 @@ nav .search li i {
     transition: all .4s;
 }
 
+.menu-bottom {
+    height: calc(100% - 50px);
+    background:rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    z-index: 900;
+    transition: all .09s;
+    display: none;
+}
+
+.categories-menu h5 {
+    margin-right: 2%
+}
+
+.categories-menu {
+    width: 100%;
+    background: #fff;
+    height: 55%;
+    position: fixed;
+    top: 100%;
+    z-index: 999;
+    overflow: hidden;
+    transition: all .09s;
+}
+
+.custom-checkbox {
+    opacity: 1;
+    border: 1px solid #999;
+}
+
+.show-categories {
+    display: block !important;
+}
+
+.show-categories .categories-menu{
+    top: 45% !important;
+}
+
+#categories {
+    width: 96%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-right: 2%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 10%;
+}
+
+.menu-bottom .button {
+    text-align: center;
+    color: #0099FF !important;
+}
+
+#categories .custom-list-bottom {
+    text-align: right;
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    position: relative;
+    color: #999;
+}
+
 .rigth {
     right: 0 !important;
 }
