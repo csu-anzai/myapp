@@ -26,17 +26,18 @@
     <nav class="fixed-top">
         <div class="container-fluid h-100">
             <div class="row h-100">
-                <div class="col-4 h-100">
+                <div class="col-2 h-100">
                     <div class="toggle-menu h-100 d-flex align-items-center">
                         <i class="mdi mdi-arrow-right"></i>
                     </div>
                 </div>
-                <div class="col-4 h-100">
+                <div class="col-8 h-100">
                     <div class="logo h-100 d-flex justify-content-center align-items-center">
-                            <p id="title" class="text-white">عن نادى طنطا</p>
+                        <img src="img/logo/tanta-clup.jpg" alt="Tanta" width="25px" height="25px">
+                        <span class="text-white"> نادى طنطا الرياضى </span>
                     </div>
                 </div>
-                <div class="col-4 h-100" >
+                <div class="col-2 h-100" >
                     <div class="h-100 search" id="share" >
                         <ul class=" h-100 d-flex justify-content-end align-items-center">
                             <li> <i class="mdi mdi-share-variant"> </i></li>
@@ -56,6 +57,7 @@
                 <div class="media mb-4">
                     <div class="media-body">
                         <article id="article" class="news-d">
+                          
                         </article>
                     </div>
                 </div>
@@ -88,7 +90,7 @@
         $("nav form input[type='search']").on("click", function (e) {
             e.stopPropagation();
         });
-        
+
         $(".mdi-share-variant").on("click", function (e) {
             $(".drop").slideToggle();
             e.stopImmediatePropagation();
@@ -102,7 +104,7 @@
         $(".mdi-arrow-right").on("click", function (){
             window.history.back();
         });
-        
+
     </script>
 </body>
 

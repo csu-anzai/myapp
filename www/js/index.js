@@ -65,7 +65,9 @@ var app = {
             });
 
           resolve(true);
-        });
+        }).catch(function(){
+          reject();
+        });;
       });
 
       // get posts for latest news
@@ -99,6 +101,8 @@ var app = {
 
         }).then(() => {
           resolve(true);
+        }).catch(function(){
+          reject();
         });
       });
 
@@ -117,13 +121,22 @@ var app = {
     $('#loading').show();
     
     var param = "";
+    // handle page query string
+    param = "&page=" + page;
+
+    // handle search query string
     search = search ? search : decodeURI(window.location.hash.substr(1));
     if(search){
-      param = "&search=" + search;
+      param += "&search=" + search;
       window.location = "news.html#" + search;
     }
 
-    param += "&page=" + page;
+    //handle category query string
+    if(window.location.search){
+      let params = new URLSearchParams(document.location.search.substring(1));
+      param += "&categories=" + params.get('cat');
+    }
+
 
       axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&per_page=10" + param).then(function(response) {
       // axios.get("test/data.json").then(function(response) {     // For testing
@@ -145,7 +158,7 @@ var app = {
                 "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span><br />" +
                 "</p>" +
                 "</a>" +
-                "<i class='mdi mdi-share' onclick=\"app.share('" + post.link + "')\" ></i>" +
+                "<i class='mdi mdi-share-variant' onclick=\"app.share('" + post.link + "')\" ></i>" +
               "</div>" +
             "</div>";
           });
@@ -162,28 +175,59 @@ var app = {
 
     //show loading gif
     $('#loading').show();
+      var postCat = 0;
 
       axios.get("http://www.tantasc.net/wp-json/wp/v2/posts/" + id + "?_embed").then(function(response) {
       // axios.get("test/post.json").then(function(response) {     // For testing
+        
         var post = response.data;
 
         var date = moment(post.date);
 
         var a = date.format('a') == 'am' ? 'صباحا' : 'مساءا';
 
-          document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
-          document.getElementById("title").innerHTML = post.title.rendered;
-          document.getElementById("date").innerHTML = date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a;
-          document.getElementById("article").innerHTML = post.content.rendered;
-          $(".mdi-share-variant").on("click", function(e){
-            app.share(post.link);
+        document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
+        document.getElementById("title").innerHTML = post.title.rendered;
+        document.getElementById("date").innerHTML = date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a;
+        document.getElementById("article").innerHTML = post.content.rendered;
+        $(".mdi-share-variant").on("click", function(e){
+          app.share(post.link);
+        });
+
+        // extract post category to get related posts
+        
+
+        post.categories.forEach(cat => {
+          if(cat != 77 && cat > 0){
+            postCat = cat;
+          }
+        });
+
+      }).then(function(){
+          axios.get("http://www.tantasc.net/wp-json/wp/v2/posts?_embed&per_page=6&exclude=" + id + "&categories=" + postCat).then(function(response) {
+
+          var posts = response.data;
+
+          posts.forEach(onePost => {
+            var date = moment(onePost.date);
+
+            var a = date.format('a') == 'am' ? 'صباحا' : 'مساءا';
+
+            document.getElementById("related-posts").innerHTML += "<a href='post.html#" + onePost.id + "' class='media position-relative mb-4'>" +
+                "<img class='d-flex mr-3 mb-3' src='" + onePost._embedded['wp:featuredmedia'][0].source_url + "' alt='Generic placeholder image'>" +
+                "<div class='media-body'>" +
+                "<p>" + onePost.title.rendered + "</p>" +
+                "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span>" +
+              "</div>" +
+            "</a>";
+
           });
 
         }).then(function(){
           $('#loading').hide();
-        }).catch(function(){
-          $('#loading').hide();
         });
+
+      });
 
   },
   page: function(id) {

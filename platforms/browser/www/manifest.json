@@ -5,7 +5,7 @@
   "short_name": "Tanta Sporting Club",
   "version": "me.digitalharbor.tantasc",
   "description": "The official mobile application of Tanta Sporting Club.",
-  "author": "PhoneGap Team",
+  "author": "Digitalharbor",
   "icons": [],
   "start_url": "index.html"
 }
