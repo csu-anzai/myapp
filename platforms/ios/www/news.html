@@ -38,24 +38,24 @@
     <nav class="fixed-top">
         <div class="container-fluid h-100">
             <form id="search">
-                <input type="search" placeholder="البحث">
+                <input type="search" placeholder="البحث" autofocus>
             </form>
-            <div class="container-fluid h-100">
+            <div class="h-100">
                 <div class="row h-100">
-                    <div class="col-3 h-100">
+                    <div class="col-2 h-100">
                         <div class="toggle-menu h-100 d-flex align-items-center">
                             <i class="mdi mdi-arrow-right"></i>
                         </div>
                     </div>
-                    <div class="col-6 h-100">
+                    <div class="col-8 h-100">
                         <div class="logo h-100 d-flex justify-content-center align-items-center">
                             <h3 class="text-white d-flex align-items-center"> <img src="img/logo/tanta-clup.jpg" class="d-inline-block" width="25px" height="25px" alt="logo"> أخبار النادى </h3>
                         </div>
                     </div>
-                    <div class="col-3 h-100">
+                    <div class="col-2 h-100">
                         <div class="h-100 search">
                             <ul class=" h-100 d-flex justify-content-end align-items-center">
-                                <li> <i class="mdi mdi-filter"> </i> </li>
+                                <li class="mr-3"> <i class="mdi mdi-filter"> </i> </li>
                                 <li> <i class="mdi mdi-magnify"> </i> </li>
                             </ul>
                         </div>
@@ -92,62 +92,63 @@
                     <div id="categories" >
 
                         <div class="menu-list text-right">
-                            <p href="news.html?cat=24" class="custom-list-bottom"> كرة القدم 
-                                <input class="float-right custom-checkbox" value="24" type="checkbox" />
-                            </p>
+                            <label for="cat-24" href="news.html?cat=24" class="custom-list-bottom"> كرة القدم
+                                <input id="cat-24" class="float-right custom-checkbox" value="24" type="checkbox" />
+                                <span class="box"> </span>
+                            </label>
                         </div>
 
                                 <!-- -------------------------- -->
 
                         <div class="menu-list text-right">
-                            <p href="news.html?cat=80" class="custom-list-bottom"> كرة اليد 
-                                <input class="float-right" value="80" type="checkbox" />
-                            </p>
+                            <label for="cat-80" href="news.html?cat=80" class="custom-list-bottom"> كرة اليد
+                                <input id="cat-80" class="float-right" value="80" type="checkbox" />
+                                <span class="box"> </span>
+                            </label>
                         </div>
 
                                 <!-- -------------------------- -->
 
                         <div class="menu-list text-right">
-                            <p href="news.html?cat=16" class="custom-list-bottom"> العاب القوى 
-                                <input class="float-right" value="16" type="checkbox" />
-                            </p>
-                        </div>  
-
+                            <label for="cat-16" href="news.html?cat=16" class="custom-list-bottom"> العاب القوى
+                                <input id="cat-16" class="float-right" value="16" type="checkbox" />
+                                <span class="box"> </span>
+                            </label>
+                        </div>
                         <!-- -------------------------- -->
 
                         <div class="menu-list text-right">
-                            <p href="news.html?cat=18" class="custom-list-bottom"> تنس 
-                                <input class="float-right" value="18" type="checkbox" />
-                            </p>
+                            <label for="cat-18" href="news.html?cat=18" class="custom-list-bottom"> تنس
+                                <input id="cat-18" class="float-right" value="18" type="checkbox" />
+                                <span class="box"> </span>
+                            </label>
                         </div>
 
                           <!-- -------------------------- -->
 
                         <div class="menu-list text-right">
-                            <p href="news.html?cat=25" class="custom-list-bottom"> كرة طائرة 
-                                <input class="float-right" value="25" type="checkbox" />
-                            </p>
+                            <label for="cat-25" href="news.html?cat=25" class="custom-list-bottom"> كرة طائرة
+                                <input id="cat-25" class="float-right" value="25" type="checkbox" />
+                                <span class="box"> </span>
+                            </label>
                         </div>
 
                           <!-- -------------------------- -->
 
                         <div class="menu-list text-right">
-                            <p href="news.html?cat=23" class="custom-list-bottom"> كرة السلة 
-                                <input class="float-right" value="23" type="checkbox" />
-                            </p>
+                            <label for="cat-23" href="news.html?cat=23" class="custom-list-bottom"> كرة السلة
+                                <input id="cat-23" class="float-right" value="23" type="checkbox" />
+                                <span class="box"> </span>
+                            </label>
                         </div>
                     </div>
 
 
                     <div class="menu-list text-right">
-                        <a href="#" id='done' class='custom-list button' >تأكيد</a>
-                    </div> 
+                        <a href="#" id='done' class='custom-list button all-news' >تأكيد</a>
+                    </div>
 
                     <!-- --------------------------- -->
-                </div>
-                <div class="powerd text-center mt-3">
-                    <a href="https://digitalharbor.me/"> <img src="img/digitalharbor.png" width="120px"> </a>
-                    <span class="d-block"> version 1.0.0 </span>
                 </div>
             </div>
         </div>
@@ -209,7 +210,7 @@
 
             $('#done').on('click', function(){
                 var cats = [];
-                $.each($("input[type='checkbox']:checked"), function(){            
+                $.each($("input[type='checkbox']:checked"), function(){
                     cats.push($(this).val());
                 });
 
@@ -223,6 +224,9 @@
             $(".mdi-arrow-right").on("click", function() {
                 window.history.back();
             });
+            $(".mdi-filter").on("click", function  () {
+              $(".menu-bottom").toggleClass("show-bottom");
+            })
         });
     </script>
 </body>

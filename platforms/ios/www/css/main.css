@@ -41,6 +41,7 @@ body {
 .font-16 {
     font-size: 18px !important;
     font-weight: bold;
+    font-family: 'Cairo', sans-serif;
 }
 
 a:hover {
@@ -288,13 +289,14 @@ nav .search li i {
     height: calc(100% - 50px);
     background:rgba(0, 0, 0, .3);
     position: fixed;
-    top: 50px;
+    top: 100%;
     width: 100%;
     z-index: 900;
-    transition: all .09s;
-    display: none;
+    transition: all .4s;
 }
-
+.show-bottom{
+  top: 50px;
+}
 .categories-menu h5 {
     margin-right: 2%
 }
@@ -302,9 +304,9 @@ nav .search li i {
 .categories-menu {
     width: 100%;
     background: #fff;
-    height: 55%;
-    position: fixed;
-    top: 100%;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
     z-index: 999;
     overflow: hidden;
     transition: all .09s;
@@ -318,24 +320,23 @@ nav .search li i {
 .show-categories {
     display: block !important;
 }
-
+/*
 .show-categories .categories-menu{
     top: 45% !important;
-}
+} */
 
 #categories {
     width: 96%;
     border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
     margin-right: 2%;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 10%;
+    height: 200px;
 }
 
 .menu-bottom .button {
     text-align: center;
-    color: #0099FF !important;
+    color: #2f3b96 !important;
 }
 
 #categories .custom-list-bottom {
@@ -348,7 +349,36 @@ nav .search li i {
     position: relative;
     color: #999;
 }
+.box{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid #eee;
+  position: absolute;
+  left: 0;
+  border-radius: 5px;
+}
+#categories .custom-list-bottom input{
+  display: none;
+  opacity: 0;
 
+}
+#categories .custom-list-bottom input:checked ~ span::after{
+  content: "\F12C";
+  background: #fef200;
+  width: 20px;
+  font: normal normal normal 18px "Material Design Icons";
+  color: #fff;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid #eee;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 5px;
+  border: 1px solid #fef200;
+}
 .rigth {
     right: 0 !important;
 }
