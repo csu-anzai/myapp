@@ -286,16 +286,17 @@ nav .search li i {
 }
 
 .menu-bottom {
-    height: calc(100% - 50px);
+    height: calc(100vh - 50px);
     background:rgba(0, 0, 0, .3);
     position: fixed;
-    top: 100%;
+    top: 50px;
     width: 100%;
     z-index: 900;
     transition: all .4s;
+    display: none;
 }
 .show-bottom{
-  top: 50px;
+  bottom:0px !important;
 }
 .categories-menu h5 {
     margin-right: 2%
@@ -305,11 +306,11 @@ nav .search li i {
     width: 100%;
     background: #fff;
     height: 300px;
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: -300px;
     z-index: 999;
     overflow: hidden;
-    transition: all .09s;
+    transition: all .4s;
 }
 
 .custom-checkbox {
@@ -331,7 +332,7 @@ nav .search li i {
     margin-right: 2%;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 200px;
+    height: 270px;
 }
 
 .menu-bottom .button {
