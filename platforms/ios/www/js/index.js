@@ -213,7 +213,7 @@ var app = {
 
             var a = date.format('a') == 'am' ? 'صباحا' : 'مساءا';
 
-            document.getElementById("related-posts").innerHTML += "<a href='post.html#" + onePost.id + "' class='media position-relative mb-4'>" +
+            document.getElementById("related-posts").innerHTML += "<a onclick='app.post(" + onePost.id + ")' class='media position-relative mb-4'>" +
                 "<img class='d-flex mr-3 mb-3' src='" + onePost._embedded['wp:featuredmedia'][0].source_url + "' alt='Generic placeholder image'>" +
                 "<div class='media-body'>" +
                 "<p>" + onePost.title.rendered + "</p>" +
@@ -224,6 +224,7 @@ var app = {
           });
 
         }).then(function(){
+          window.location.href = 'post.html#' + id;
           $('#loading').hide();
         });
 
