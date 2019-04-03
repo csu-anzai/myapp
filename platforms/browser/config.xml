@@ -5,7 +5,7 @@
         The official mobile application of Tanta Sporting Club.
     </description>
     <author email="info@digitalharbor.me" href="http://digitalharbor.me">
-        PhoneGap Team
+        Digitalharbor
     </author>
     <content src="index.html" />
     <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
@@ -16,9 +16,11 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="*" />
     <gap:plugin name="onesignal-cordova-plugin" source="npm" spec="^2.4.1" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="16" />
+    <preference name="OverrideUserAgent" value="Mozilla/5.0 My Browser" />
     <preference name="phonegap-version" value="cli-8.0.0" />
     <preference name="android-build-tool" value="gradle" />
 </widget>
