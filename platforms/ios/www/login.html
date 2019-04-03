@@ -22,64 +22,61 @@
     <div id="loading" ><img src="img/loading.gif" /></div>
     <div style="width: 100%; background-color:#f5f5f5" >
 
-      <div class="member-login menu">
+      <!--  Expanded menu  -->
+    <div class="member-login menu">
+
         <div class="container-fluid">
-          <div class="content">
-            <div class="img text-center">
-              <img src="img/logo/logo.png" width="100px">
+            <div class="content">
+                <div class="img text-center">
+                    <img src="img/logo/logo.png" width="100px">
+                </div>
+                <div class="menus">
+                    <button type="" onclick="window.location = 'login.html'" class="custom-botton d-block w-100">الاعضاء</button>
+
+                    <div class="menu-list text-right">
+                        <a href="page.html#6089" class="custom-list"> عن النادى </a>
+                    </div>
+
+                    <!-- --------------------------- -->
+
+                    <div class="menu-list text-right">
+                        <a href="page.html#5007" class="custom-list"> تاريخ النادى </a>
+                    </div>
+
+                    <!-- -------------------------- -->
+
+                    <div class="menu-list text-right">
+                        <a href="page.html#5005" class="custom-list"> رؤساء النادى </a>
+                    </div>
+
+                    <!-- -------------------------- -->
+
+                    <div class="menu-list text-right">
+                        <a href="news.html?cat=24" class="custom-list"> كرة القدم </a>
+                    </div>
+
+                            <!-- -------------------------- -->
+
+                    <div class="menu-list text-right">
+                        <a href="news.html?cat=80" class="custom-list"> كرة اليد </a>
+                    </div>
+
+                            <!-- -------------------------- -->
+
+                    <div class="menu-list text-right">
+                        <a href="news.html?cat=16" class="custom-list"> العاب القوى </a>
+                    </div>
+
+
+                    <!-- --------------------------- -->
+                </div>
+                <div class="powerd text-center mt-3">
+                    <a href="https://digitalharbor.me/"> <img src="img/digitalharbor.png" width="120px"> </a>
+                    <span class="d-block"> version 1.0.0 </span>
+                </div>
             </div>
-            <div class="menus">
-              <button type="" onclick="window.location = 'index.html'" class="custom-botton d-block w-100">الرئيسية</button>
-
-                <div class="menu-list text-right">
-                    <a href="#" onclick="redirect('index.php')" class="custom-list"> بياناتى </a>
-                </div>
-
-                <!-- --------------------------- -->
-
-                <div class="menu-list text-right">
-                    <a href="#" onclick="redirect('add_submember.php')" class="custom-list"> إضافة عضو فرعى </a>
-                </div>
-
-                <!-- -------------------------- -->
-
-                <div class="menu-list text-right">
-                    <a href="#" onclick="redirect('birthday_party.php')" class="custom-list"> حجز عيد ميلاد </a>
-                </div>
-
-                <!-- -------------------------- -->
-
-                <div class="menu-list text-right">
-                    <a href="#" onclick="redirect('concert.php')" class="custom-list"> حجز حفل متفوقين </a>
-                </div>
-
-                <!-- -------------------------- -->
-
-                <div class="menu-list text-right">
-                    <a href="#" onclick="redirect('mosque_booking.php')" class="custom-list"> حجز مسجد </a>
-                </div>
-
-                <!-- -------------------------- -->
-
-                <div class="menu-list text-right">
-                    <a href="#" onclick="redirect('profile.php')" class="custom-list"> الملف الشخصى </a>
-                </div>
-
-                <!-- -------------------------- -->
-
-                <div class="menu-list text-right">
-                    <a href="#" onclick="redirect('logout.php')" class="custom-list"> تسجيل الخروج </a>
-                </div>
-
-              <!-- --------------------------- -->
-            </div>
-            <div class="powerd text-center mt-3">
-              <a href="https://digitalharbor.me/"> <img src="img/digitalharbor.png" width="120px"> </a>
-              <span class="d-block"> version 1.0.0 </span>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
     <nav class="fixed-top">
     <form id="search">
@@ -93,7 +90,7 @@
           </div>
         </div>
         <div class="col-8 h-100">
-          <div class="logo h-100 d-flex justify-content-center align-items-center">
+          <div onclick="window.location.href = 'index.html'" class="logo h-100 d-flex justify-content-center align-items-center">
             <img src="img/logo/tanta-clup.jpg" alt="Tanta" width="25px" height="25px">
             <span class="text-white"> نادى طنطا الرياضى </span>
           </div>
@@ -101,7 +98,7 @@
         <div class="col-2 h-100">
           <div class="h-100 search">
             <ul class=" h-100 position-relative d-flex justify-content-end align-items-center">
-              <li> <i class="mdi mdi-magnify"> </i> </li>
+              <li> <i onclick="redirect('index.php')" class="mdi mdi-arrow-left"> </i> </li>
             </ul>
           </div>
         </div>
@@ -113,14 +110,14 @@
 
       <div class="member">
         <ul>
-          <li> <button class="member-servces"> <i class="mdi mdi-plus-circle"></i>   عضو فرعي  </button> </li>
-          <li> <button class="member-servces"> <i class="mdi mdi-cake"></i>  عيد ميلاد  </button> </li>
-          <li> <button class="member-servces"> <i class="mdi mdi-gift"></i> حفل متفوقين  </button> </li>
+          <li> <button onclick="redirect('add_submember.php')" class="member-servces"> <i class="mdi mdi-plus-circle"></i>   عضو فرعي  </button> </li>
+          <li> <button onclick="redirect('birthday_party.php')" class="member-servces"> <i class="mdi mdi-cake"></i>  عيد ميلاد  </button> </li>
+          <li> <button onclick="redirect('concert.php')" class="member-servces"> <i class="mdi mdi-gift"></i> حفل متفوقين  </button> </li>
         </ul>
         <ul>
-          <li> <button class="member-servces"> <img src="img/mosque.png" height="15px" width="15px"> حجز مسجد  </button> </li>
-          <li> <button class="member-servces"> <i class="mdi mdi-account"></i> الملف الشخصى  </button> </li>
-          <li> <button class="member-servces"> <i class="mdi mdi-logout"></i> تسجيل خروج  </button> </li>
+          <li> <button onclick="redirect('mosque_booking.php')" class="member-servces"> <img src="img/mosque.png" height="15px" width="15px"> حجز مسجد  </button> </li>
+          <li> <button onclick="redirect('profile.php')" class="member-servces"> <i class="mdi mdi-account"></i> الملف الشخصى  </button> </li>
+          <li> <button onclick="redirect('logout.php')" class="member-servces"> <i class="mdi mdi-logout"></i> تسجيل خروج  </button> </li>
         </ul>
       </div>
   </div>
@@ -164,15 +161,6 @@
             $("body, html").on("click", function() {
               $(".menu").removeClass("rigth");
               $(this).removeClass("no-scroll");
-              $("nav form input[type='search']").removeClass("d-block");
-            });
-
-            $(".mdi-magnify").on("click", function(e) {
-              $("nav form input[type='search']").addClass("d-block");
-              e.stopPropagation();
-            });
-            $("nav form input[type='search']").on("click", function(e) {
-              e.stopPropagation();
             });
 
         });
