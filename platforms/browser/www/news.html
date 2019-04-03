@@ -142,7 +142,7 @@
                 <span class="box"> </span>
               </label>
             </div>
-            </di</kj </ v>
+        </div>
 
 
             <div class="menu-list text-center">
@@ -211,7 +211,12 @@
             cats.push($(this).val());
           });
 
-          window.location.href = 'news.html?cat=' + cats;
+        if(cats.length){
+            window.location.href = 'news.html?cat=' + cats;
+        } else {
+            window.location.href = 'news.html';
+        }
+
         });
 
         $("nav form input[type='search']").on("click", function(e) {
