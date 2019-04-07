@@ -236,7 +236,7 @@ var app = {
     // show loading gif
     $('#loading').show();
 
-      axios.get("http://www.tantasc.net/wp-json/wp/v2/pages/" + id).then(function(response) {
+      axios.get("http://www.tantasc.net/wp-json/wp/v2/pages/" + id + "?_embed").then(function(response) {
       // axios.get("test/page.json").then(function(response) {     // For testing
         var page = response.data;
 
