@@ -240,7 +240,7 @@ var app = {
       // axios.get("test/page.json").then(function(response) {     // For testing
         var page = response.data;
 
-          // document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
+          document.getElementById("img").setAttribute('src', page._embedded['wp:featuredmedia'][0].source_url);
           // document.getElementById("title").innerHTML = page.title.rendered;
           document.getElementById("article").innerHTML = page.content.rendered;
           $(".mdi-share-variant").on("click", function(e){
