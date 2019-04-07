@@ -248,7 +248,7 @@ nav .search li i {
 
 .media-body span {
   position: absolute;
-  bottom: 15px;
+  bottom: 30px;
   font-size: 10px;
   color: #9a9a9a;
 }
@@ -265,12 +265,6 @@ nav .search li i {
 
 .all-news:hover {
   color: #2f3b96;
-}
-
-@media (max-width: 380px) {
-  .media-body span {
-    position: static !important;
-  }
 }
 
 .menu {
@@ -480,6 +474,13 @@ nav .search li i {
   border: none;
   color: #000;
   padding-left: 50px;
+}
+
+.post-card .card-body {
+  position: relative;
+  padding: 15px 20px 5px 20px;
+  border: none;
+  color: #000;
 }
 
 #load-more {
