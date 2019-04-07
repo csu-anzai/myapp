@@ -252,9 +252,30 @@ nav .search li i {
   font-size: 10px;
   color: #9a9a9a;
 }
-
+#article{
+  padding: 20px;
+}
+#article table{
+  margin-bottom: 15px;
+}
+#article table, #article table td, #article table tr{
+  border: 1px solid #000;
+}
+#article table td, #article table tr{
+  padding: 5px;
+}
+#article p{
+  margin-bottom: 10px;
+}
 #article span {
   position: unset;
+  font-size: 14px !important;
+  line-height: 1.6;
+
+}
+#article img{
+  width: 100%;
+  height: auto;
 }
 
 .all-news {
