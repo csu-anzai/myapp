@@ -253,6 +253,10 @@ nav .search li i {
   color: #9a9a9a;
 }
 
+#article span {
+  position: unset;
+}
+
 .all-news {
   display: inline-block;
   margin-bottom: 30px;
@@ -474,6 +478,13 @@ nav .search li i {
   border: none;
   color: #000;
   padding-left: 50px;
+}
+
+.post-card .card-body {
+  position: relative;
+  padding: 15px 20px 5px 20px;
+  border: none;
+  color: #000;
 }
 
 #load-more {

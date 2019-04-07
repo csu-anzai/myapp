@@ -253,6 +253,10 @@ nav .search li i {
   color: #9a9a9a;
 }
 
+#article span {
+  position: unset;
+}
+
 .all-news {
   display: inline-block;
   margin-bottom: 30px;
