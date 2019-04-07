@@ -240,7 +240,11 @@ var app = {
       // axios.get("test/page.json").then(function(response) {     // For testing
         var page = response.data;
 
-          document.getElementById("img").setAttribute('src', page._embedded['wp:featuredmedia'][0].source_url);
+          if(page.featured_media != 0){
+            document.getElementById("img").setAttribute('src', page._embedded['wp:featuredmedia'][0].source_url);
+          } else {
+            document.getElementById("img").style.display = 'none';
+          }
           // document.getElementById("title").innerHTML = page.title.rendered;
           document.getElementById("article").innerHTML = page.content.rendered;
           $(".mdi-share-variant").on("click", function(e){
