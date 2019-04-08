@@ -166,7 +166,6 @@ nav .search li i {
   padding: 10px 0;
   font-size: 14px;
   position: relative;
-  font-weight: bold;
   color: #000;
 }
 
@@ -320,7 +319,8 @@ nav .search li i {
 }
 
 .categories-menu h5 {
-  margin-right: 2%
+  margin-right: 2%;
+  padding: 20px 0 !important;
 }
 
 .categories-menu {
@@ -366,20 +366,19 @@ nav .search li i {
   margin-bottom: 0;
   display: block;
   width: 100%;
-  padding: 10px 0;
-  font-size: 14px;
+  padding: 15px 0;
+  font-size: 16px;
   position: relative;
-  color: #999;
 }
 
 .box {
   width: 20px;
   height: 20px;
   display: inline-block;
-  border: 1px solid #eee;
+  border: 1px solid #000;
   position: absolute;
   left: 0;
-  border-radius: 5px;
+  top: 19px;
 }
 
 #categories .custom-list-bottom input {
@@ -390,18 +389,16 @@ nav .search li i {
 #categories .custom-list-bottom input:checked~span::after {
   content: "\F12C";
   background: #fef200;
-  width: 20px;
+  width: 22px;
   font: normal normal normal 18px "Material Design Icons";
   color: #fff;
-  height: 20px;
+  height: 22px;
   display: inline-block;
-  border: 1px solid #eee;
   position: absolute;
-  left: -1px;
-  top: -1px;
+  left: -2px;
+  top: -2px;
   text-align: center;
   line-height: 20px;
-  border-radius: 5px;
   border: 1px solid #fef200;
 }
 
@@ -590,5 +587,18 @@ top: 70px; */
 .member ul li button img
 {
   margin-left: 10px;
+}
+.mini-title{
+  font-size: 14px;
+  color: #929090;
+}
+.other-games{
+  padding-right: 20px !important;
+}
+.divider{
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  padding: 10px 0;
+  text-align: right !important;
 }
 /*# sourceMappingURL=main.css.map */
