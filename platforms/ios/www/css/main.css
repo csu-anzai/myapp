@@ -187,6 +187,7 @@ nav .search li i {
   position: relative;
 }
 
+/*
 .member-login .content .menus .menu-list i {
   position: absolute;
   left: 0;
@@ -196,6 +197,7 @@ nav .search li i {
   color: #cbcbd0;
   margin-top: -12px;
 }
+*/
 
 .member-login .content .menus .menu-list input[type="radio"] {
   display: none;
@@ -600,5 +602,25 @@ top: 70px; */
   border-bottom: 1px solid #ececec;
   padding: 10px 0;
   text-align: right !important;
+}
+.menu .menus .menu-list a i{
+    font-size: 22px;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+.menu .menus .menu-list a img{
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+.menu .social-icon{
+	display: flex;
+    justify-content: space-evenly;
+    margin: 15px 0;
+}
+.menu .social-icon a img{
+	width: 28px;
+	height: 28px;
 }
 /*# sourceMappingURL=main.css.map */
