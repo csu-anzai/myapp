@@ -19,6 +19,7 @@
 </head>
 
 <body class="d-flex justify-content-center align-items-center">
+  <div id="body" >
     <div id="loading" ><img src="img/loading.gif" /></div>
     <div style="width: 100%; background-color:#f5f5f5" >
 
@@ -158,6 +159,7 @@
 
     <iframe id="iframe" name="iframe" src="http://tantasc.net/members-mobile/" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
 </div>
+</div>
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
     <!-- Js External Fills -->
@@ -185,22 +187,21 @@
             $(".toggle-menu i").on("click", function(e) {
               $(".menu").toggleClass("rigth")
               e.stopPropagation();
-				$(".overlay").toggleClass("d-none");
-              $("document ,body").toggleClass("no-scroll");
+  				    $(".overlay").toggleClass("d-none");
+              $("#body").toggleClass("no-scroll");
             });
 
             $(".menu").on("click", function(e) {
               e.stopPropagation();
             });
-            $("body, html").on("click", function() {
+            $("#body").on("click", function() {
               $(".menu").removeClass("rigth");
               $(this).removeClass("no-scroll");
             });
 		  
 		  	$(".overlay").on("click", function () {
-				$(this).toggleClass("d-none");
-				console.log("click")
-			})
+  				$(this).toggleClass("d-none");
+  			});
         });
 
     </script>

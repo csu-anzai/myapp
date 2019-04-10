@@ -33,6 +33,7 @@
 </head>
 
 <body>
+  <div id="body" >
   <div id="loading"><img src="img/loading.gif" /></div>
 
 
@@ -154,6 +155,7 @@
         </div>
       </div>
     </div>
+  </div>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
@@ -228,8 +230,13 @@
         $(".mdi-filter").on("click", function(e) {
           $(".menu-bottom").toggleClass("show-categories");
           $(".categories-menu").toggleClass("show-bottom");
+          $("#body").toggleClass("no-scroll");
           e.stopPropagation();
-        })
+        });
+
+        $("#body").on("click", function() {
+              $(this).removeClass("no-scroll");
+            });
 
         $(".menu-bottom").on("click", function () {
           $(".menu-bottom").removeClass("show-categories");

@@ -41,6 +41,7 @@
 </head>
 
 <body class="">
+    <div id="body" >
     <div id="loading"><img src="img/loading.gif" /></div>
 
     <div class="overlay d-none"></div>
@@ -192,48 +193,8 @@
             </div>
         </div>
 
-    <!-- <div class="catogery p-2">
-      <div class="row text-center">
-          <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=24">
-              <img src="img/soccer-ball-variant.png" alt="football">
-              <span class="d-block">كرة قدم</span>
-            </a>
-          </div>
-          <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=23">
-              <img src="img/basketball-player-scoring.png" alt="basketball-player-scoring">
-              <span class="d-block">كرة سله</span>
-            </a>
-          </div>
-          <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=18">
-              <img src="img/tennis-ball.png" alt="tennis-ball">
-              <span class="d-block">تنس</span>
-            </a>
-          </div>
-          <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=80">
-              <img src="img/handball.png" alt="handball">
-              <span class="d-block">كرة يد</span>
-            </a>
-          </div>
-          <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=25">
-              <img src="img/volleyball.png" alt="volleyball">
-              <span class="d-block">كرة طائره</span>
-            </a>
-          </div>
-          <div class="col-6 col-sm-4  mb-2 p-2">
-            <a href="news.html?cat=16">
-              <img src="img/gym.png" alt="gym">
-              <span class="d-block">العاب قوي</span>
-            </a>
-          </div>
-      </div>
-    </div> -->
-
     </div>
+</div>
     <script src="cordova.js"></script>
     <script src="js/axios.min.js"></script>
     <script src="js/moment.js"></script>
@@ -259,13 +220,13 @@
                 $(".menu").toggleClass("rigth")
                 e.stopPropagation();
 				$(".overlay").toggleClass("d-none");
-                $("document ,body").toggleClass("no-scroll");
+                $("#body").toggleClass("no-scroll");
             });
 
             $(".menu").on("click", function(e) {
                 e.stopPropagation();
             });
-            $("body, html").on("click", function() {
+            $("#body").on("click", function() {
                 $(".menu").removeClass("rigth");
                 $(this).removeClass("no-scroll");
                 $("nav form input[type='search']").removeClass("d-block");
