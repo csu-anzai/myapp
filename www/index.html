@@ -41,10 +41,8 @@
 </head>
 
 <body class="">
-    <div id="body" >
     <div id="loading"><img src="img/loading.gif" /></div>
 
-    <div class="overlay d-none"></div>
     <!--  Expanded menu  -->
     <div class="member-login menu">
 
@@ -93,7 +91,7 @@
                         <a href="news.html?cat=80" class="custom-list other-games"> <img src="img/handball.png" alt="handball"> كرة اليد </a>
                     </div>
                     
-				   	<div class="menu-list text-right">
+                    <div class="menu-list text-right">
                         <a href="news.html?cat=25" class="custom-list other-games"> <img src="img/volleyball-player.png" alt="handball"> كرة الطائرة </a>
                     </div>
                             <!-- -------------------------- -->
@@ -126,16 +124,16 @@
                     <div class="menu-list text-right">
                       <a href="conferences.html" class="custom-list other-games"> <img src="img/conference-hall.png" alt="conference-hall"> حجز قاعة مؤتمرات </a>
                     </div>
-				 	<div class="menu-list text-right">
+                    <div class="menu-list text-right">
                       <a href="contact_us.html" class="custom-list other-games"> <img src="img/contact.png" alt="contact"> تواصل معنا </a>
                     </div>
                     <!-- --------------------------- -->
                 </div>
                 <div class="social-icon">
-                	<a onclick="cordova.InAppBrowser.open('https://www.facebook.com/tantaclub.net/?ref=br_rs', '_system')" > <img src="img/facebook.png" alt="facebook"> </a>
-                	<a onclick="cordova.InAppBrowser.open('https://twitter.com/TantaSC', '_system')"  > <img src="img/twitter.png" alt="twitter"> </a>
-                	<a onclick="cordova.InAppBrowser.open('https://www.youtube.com/channel/UCdO3KvRPxnNm00KqH7H7pRA', '_system')" > <img src="img/youtube.png" alt="youtube"> </a>
-                	<a onclick="cordova.InAppBrowser.open('https://www.instagram.com/Tanta.SC/', '_system')" > <img src="img/instagram.png" alt="instagram"> </a>
+                    <a onclick="cordova.InAppBrowser.open('https://www.facebook.com/tantaclub.net/?ref=br_rs', '_system')" > <img src="img/facebook.png" alt="facebook"> </a>
+                    <a onclick="cordova.InAppBrowser.open('https://twitter.com/TantaSC', '_system')"  > <img src="img/twitter.png" alt="twitter"> </a>
+                    <a onclick="cordova.InAppBrowser.open('https://www.youtube.com/channel/UCdO3KvRPxnNm00KqH7H7pRA', '_system')" > <img src="img/youtube.png" alt="youtube"> </a>
+                    <a onclick="cordova.InAppBrowser.open('https://www.instagram.com/Tanta.SC/', '_system')" > <img src="img/instagram.png" alt="instagram"> </a>
                 </div>
                 <div class="powerd text-center mt-3">
                     <a onclick="cordova.InAppBrowser.open('https://digitalharbor.me/', '_system')"> <img src="img/digitalharbor.png" width="120px"> </a>
@@ -144,8 +142,6 @@
             </div>
         </div>
     </div>
-
-
     <nav class="fixed-top">
         <form id="search">
             <input type="search" placeholder="البحث" autofocus>
@@ -173,26 +169,28 @@
             </div>
         </div>
     </nav>
+    <div id="body" >
+    <div class="overlay d-none"></div>
+        <header class="slick" id="slider">
+        </header>
 
-    <header class="slick" id="slider">
-    </header>
 
+        <div class="content pt-3 pr-2 pl-2">
 
-    <div class="content pt-3 pr-2 pl-2">
+            <div class="head d-flex justify-content-between mb-3">
+                <h3>أخر الاخبار</h3>
+            </div>
+            <div class="news-items">
+                <div id="posts">
 
-        <div class="head d-flex justify-content-between mb-3">
-            <h3>أخر الاخبار</h3>
-        </div>
-        <div class="news-items">
-            <div id="posts">
+                </div>
 
+                <div class="w-100 text-center">
+                    <a href="news.html" class="all-news"> كل الاخبار </a>
+                </div>
             </div>
 
-            <div class="w-100 text-center">
-                <a href="news.html" class="all-news"> كل الاخبار </a>
-            </div>
         </div>
-
     </div>
 </div>
     <script src="cordova.js"></script>

@@ -20,11 +20,14 @@ document.addEventListener('deviceready', function () {
 
 
 const ptr = PullToRefresh.init({
-  mainElement: 'body',
+  shouldPullToRefresh: () => !window.scrollY,
+  mainElement: '#body',
+  triggerElement: '#body',
   onRefresh() {
     window.location.reload();
   },
 });
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file

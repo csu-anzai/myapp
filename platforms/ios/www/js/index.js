@@ -20,7 +20,8 @@ document.addEventListener('deviceready', function () {
 
 
 const ptr = PullToRefresh.init({
-  mainElement: 'body',
+  mainElement: '#body',
+  triggerElement: 'body',
   onRefresh() {
     window.location.reload();
   },

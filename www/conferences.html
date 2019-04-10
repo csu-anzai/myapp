@@ -19,9 +19,8 @@
 </head>
 
 <body>
-  <div id="body" class="d-flex justify-content-center align-items-center" >
+  <div class="d-flex justify-content-center align-items-center" >
     <div id="loading" ><img src="img/loading.gif" /></div>
-    <div class="overlay d-none"></div>
     <div style="width: 100%; background-color:#f5f5f5" >
 
     <!--  Expanded menu  -->
@@ -157,8 +156,10 @@
     </div>
   </nav>
 
-
+<div  id="body" >
+    <div class="overlay d-none"></div>
     <iframe id="iframe" name="iframe" src="http://tantasc.net/members-mobile/conferences.php" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
+  </div>
 </div>
 </div>
     <script src="cordova.js"></script>

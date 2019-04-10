@@ -33,7 +33,6 @@
 </head>
 
 <body>
-  <div id="body" >
   <div id="loading"><img src="img/loading.gif" /></div>
 
 
@@ -67,6 +66,9 @@
     </div>
   </nav>
 
+
+  <div id="body" >
+  <div class='menu-bottom'></div>
   <div class="news pt-3">
     <div class="container-fluid">
       <div class="news-items" id="posts">
@@ -79,8 +81,7 @@
       </div>
     </div>
   </div>
-
-  <div class='menu-bottom'></div>
+</div>
   <div class="member-login categories-menu">
 
     <div class="container-fluid">
@@ -191,7 +192,6 @@
         </div>
       </div>
     </div>
-  </div>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
@@ -272,13 +272,10 @@
         });
 
         $("#body").on("click", function() {
-              $(this).removeClass("no-scroll");
-            });
-
-        $(".menu-bottom").on("click", function () {
+          $(this).removeClass("no-scroll");
           $(".menu-bottom").removeClass("show-categories");
-          $(".categories-menu").removeClass("show-bottom")
-        })
+          $(".categories-menu").removeClass("show-bottom");
+        });
 
         $(".categories-menu").on("click", function  (e) {
           e.stopPropagation()
