@@ -23,6 +23,7 @@
     <div style="width: 100%; background-color:#f5f5f5" >
 
     <!--  Expanded menu  -->
+    <div class="overlay d-none"></div>
     <div class="member-login menu">
 
         <div class="container-fluid">
@@ -68,6 +69,10 @@
 
                     <div class="menu-list text-right">
                         <a href="news.html?cat=80" class="custom-list other-games"> <img src="img/handball.png" alt="handball"> كرة اليد </a>
+                    </div>
+                       
+				   	<div class="menu-list text-right">
+                        <a href="news.html?cat=80" class="custom-list other-games"> <img src="img/volleyball-player.png" alt="handball"> كرة الطائرة </a>
                     </div>
 
                             <!-- -------------------------- -->
@@ -178,6 +183,7 @@
             $(".toggle-menu i").on("click", function(e) {
               $(".menu").toggleClass("rigth")
               e.stopPropagation();
+				$(".overlay").toggleClass("d-none");
               $("document ,body").toggleClass("no-scroll");
             });
 
@@ -188,7 +194,11 @@
               $(".menu").removeClass("rigth");
               $(this).removeClass("no-scroll");
             });
-
+		  
+		  	$(".overlay").on("click", function () {
+				$(this).toggleClass("d-none");
+				console.log("click")
+			})
         });
 
     </script>

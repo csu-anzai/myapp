@@ -623,4 +623,13 @@ top: 70px; */
 	width: 28px;
 	height: 28px;
 }
+.overlay{
+	position: fixed;
+	height: calc(100% - 50px);
+	width:100%;
+	top: 50px;
+	left: 0;
+	z-index: 4;
+	background-color: rgba(0, 0, 0, .4);
+}
 /*# sourceMappingURL=main.css.map */
