@@ -236,11 +236,15 @@ var app = {
     // show loading gif
     $('#loading').show();
 
-      axios.get("http://www.tantasc.net/wp-json/wp/v2/pages/" + id).then(function(response) {
+      axios.get("http://www.tantasc.net/wp-json/wp/v2/pages/" + id + "?_embed").then(function(response) {
       // axios.get("test/page.json").then(function(response) {     // For testing
         var page = response.data;
 
-          document.getElementById("img").setAttribute('src', page._embedded['wp:featuredmedia'][0].source_url);
+          if(page.featured_media != 0){
+            document.getElementById("img").setAttribute('src', page._embedded['wp:featuredmedia'][0].source_url);
+          } else {
+            document.getElementById("img").style.display = 'none';
+          }
           // document.getElementById("title").innerHTML = page.title.rendered;
           document.getElementById("article").innerHTML = page.content.rendered;
           $(".mdi-share-variant").on("click", function(e){
