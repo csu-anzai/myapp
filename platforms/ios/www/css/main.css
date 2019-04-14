@@ -532,7 +532,7 @@ nav .search li i {
   color: #9a9a9a;
 }
 
-#loading {
+#loading, #error {
   position: fixed;
   width: 100%;
   height: calc(100vh - 50px);
@@ -542,11 +542,20 @@ nav .search li i {
   z-index: 999;
 }
 
-#loading img {
+#error {
+  z-index: 900 !important;
+}
+
+#loading img, #error img {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+#error img {
+  width: 200px;
+  height: 200px;
 }
 
 .comments {
