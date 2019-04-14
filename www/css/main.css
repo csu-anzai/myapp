@@ -558,6 +558,26 @@ nav .search li i {
   height: 200px;
 }
 
+#error p {
+  position: absolute;
+  bottom: 20px;
+  color: #383737;
+  font-size: 14px;
+  color: #2f3b96;
+  left: 50%;
+  margin-left: -50%;
+}
+
+#error i {
+  vertical-align: middle;
+}
+
+#error button {
+  background-color: #FDF200;
+  font-size: 14px;
+  color: #fff;
+}
+
 .comments {
   background-color: #005;
   color: #fff;
