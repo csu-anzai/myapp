@@ -581,6 +581,7 @@ nav .search li i {
 .comments {
   background-color: #005;
   color: #fff;
+	border-radius: .25rem;
 }
 
 .comments .head h3 {
