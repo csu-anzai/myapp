@@ -562,10 +562,10 @@ nav .search li i {
   position: absolute;
   bottom: 20px;
   color: #383737;
-  font-size: 12px;
+  font-size: 14px;
   color: #2f3b96;
   left: 50%;
-  margin-left: -92px;
+  margin-left: -50%;
 }
 
 #error i {
@@ -574,7 +574,7 @@ nav .search li i {
 
 #error button {
   background-color: #FDF200;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
 }
 

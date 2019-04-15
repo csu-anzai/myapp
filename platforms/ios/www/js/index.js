@@ -1,7 +1,7 @@
 
 
 window.addEventListener("message", function(e){
-  // document.getElementById('error').style.display = 'none';
+  document.getElementById('error').style.display = 'none';
 }, false);
 // Add to index.js or the first page that loads with your app.
 // For Intel XDK and please add this to your app.js.
