@@ -50,7 +50,9 @@
           </div>
           <div class="col-8 h-100">
             <div class="logo h-100 d-flex justify-content-center align-items-center">
-              <h3 class="text-white d-flex align-items-center" > <img src="img/logo/tanta-clup.jpg" class="d-inline-block" width="25px" height="25px" alt="logo"> <span id="main-title">  </span> </h3>
+              <h3 class="text-white d-flex align-items-center" > <img src="img/logo/tanta-clup.jpg" class="d-inline-block" width="25px" height="25px" alt="logo">
+                <span id="main-title">أخبار النادى</span>
+              </h3>
             </div>
           </div>
           <div class="col-2 h-100">
@@ -139,8 +141,8 @@
             <!-- -------------------------- -->
 
             <div class="menu-list text-right">
-              <label for="cat-78" href="news.html?cat=78" class="custom-list-bottom"> كرة السلة
-                <input id="cat-78" class="float-right" value="78" type="checkbox" />
+              <label for="cat-23" href="news.html?cat=23" class="custom-list-bottom"> كرة السلة
+                <input id="cat-23" class="float-right" value="23" type="checkbox" />
                 <span class="box"> </span>
               </label>
             </div>
@@ -217,7 +219,46 @@
           var cats = params.get('cat').split(',');
           cats.forEach(cat => {
             $(`input[value="${cat}"]`).prop('checked', true);
-          })
+          });
+
+          // change title in top bar according to selected single category
+          // and leave it as 'أخبار النادى' if there is more than one category selected
+          if(cats.length == 1) {
+            switch (cats[0]){
+              case '24':
+                $('#main-title').text('كرة القدم');
+                break;
+              case '80':
+                $('#main-title').text('كرة اليد');
+                break;
+              case '16':
+                $('#main-title').text('ألعاب القوى');
+                break;
+              case '18':
+                $('#main-title').text('تنس');
+                break;
+              case '25':
+                $('#main-title').text('كرة طائرة');
+                break;
+              case '23':
+                $('#main-title').text('كرة السلة');
+                break;
+              case '78':
+                $('#main-title').text('تنس طاولة');
+                break;
+              case '17':
+                $('#main-title').text('سباحة');
+                break;
+              case '85':
+                $('#main-title').text('تايكندو');
+                break;
+              case '86':
+                $('#main-title').text('اسكواش');
+                break;
+              default:
+                $('#main-title').text('أخبار النادى');
+            }
+          }
         }
 
         sessionStorage.currentPage = 1;
@@ -249,11 +290,11 @@
             cats.push($(this).val());
           });
 
-        if(cats.length){
-            window.location.href = 'news.html?cat=' + cats;
-        } else {
-            window.location.href = 'news.html';
-        }
+          if(cats.length){
+              window.location.href = 'news.html?cat=' + cats;
+          } else {
+              window.location.href = 'news.html';
+          }
 
         });
 
@@ -280,28 +321,6 @@
         $(".categories-menu").on("click", function  (e) {
           e.stopPropagation()
         });
-		  
-		if( $(location).attr('href') === "news.html?cat=80" ){
-			$("#main-title").text("كرة يد")
-		} else if ( $(location).attr('href') === news.html?cat=25" ) {
-			$("#main-title").text("كرة طائرة")
-		} else if ( $(location).attr('href') === "news.html?cat=16"  ) {
-			$("#main-title").text("العاب قوى")
-		} else if ( $(location).attr('href') === "news.html?cat=23"  ) {
-			$("#main-title").text("كرة سله")
-		} else if ( $(location).attr('href') === "news.html?cat=18"  ) {
-			$("#main-title").text("تنس")
-		} else if ( $(location).attr('href') === "news.html?cat=78"  ) {
-			$("#main-title").text("تنس طاولة")
-		} else if ( $(location).attr('href') === "news.html?cat=17"  ) {
-			$("#main-title").text("سباحة")
-		} else if ( $(location).attr('href') === "news.html?cat=85"  ) {
-			$("#main-title").text("تايكندو")
-		} else if ( $(location).attr('href') === "news.html?cat=86"  ) {
-			$("#main-title").text("اسكواش")
-		} else {
-			$("#main-title").text("اخبار النادى")
-		}
 		
       });
     </script>
