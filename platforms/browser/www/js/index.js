@@ -1,3 +1,8 @@
+
+
+window.addEventListener("message", function(e){
+  document.getElementById('error').style.display = 'none';
+}, false);
 // Add to index.js or the first page that loads with your app.
 // For Intel XDK and please add this to your app.js.
 
@@ -17,6 +22,17 @@
 //     .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
 //     .endInit();
 // }, false);
+
+
+const ptr = PullToRefresh.init({
+  shouldPullToRefresh: () => !window.scrollY,
+  mainElement: '#body',
+  triggerElement: '#body',
+  onRefresh() {
+    window.location.reload();
+  },
+});
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file

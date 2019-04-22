@@ -8,7 +8,7 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>member-login</title>
+    <title>تواصل معنا</title>
     <!-- External fills -->
     <link href="css/google-cairo.css" rel="stylesheet">
     <link rel="stylesheet" href="css/materialdesignicons.min.css">
@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body >
   <div class="d-flex justify-content-center align-items-center" >
     <div id="error" class="text-center" >
       <img src="img/error.png" />
@@ -74,9 +74,10 @@
                     <div class="menu-list text-right">
                         <a href="news.html?cat=80" class="custom-list other-games"> <img src="img/handball.png" alt="handball"> كرة اليد </a>
                     </div>
-                       
-				   	      
-                    <div class="menu-list text-right">
+
+
+                    
+                     <div class="menu-list text-right">
                         <a href="news.html?cat=25" class="custom-list other-games"> <img src="img/volleyball-player.png" alt="handball"> كرة الطائرة </a>
                     </div>
 
@@ -113,12 +114,12 @@
 				 	<div class="menu-list text-right">
                       <a href="contact_us.html" class="custom-list other-games"> <img src="img/contact.png" alt="contact"> تواصل معنا </a>
                     </div>
+					
                     <div class="menu-list text-right">
-                      <a href="https://www.google.com/maps/place/Tanta+Sporting+Club/@30.796198,30.994752,16z/data=!4m5!3m4!1s0x0:0xeb48aa8dd56b389d!8m2!3d30.7961979!4d30.9947517?hl=en-US" class="custom-list other-games"> <img src="img/maps-and-flags.png" alt="contact"> العنوان علي الخريطة </a>
-                    </div> 
+                      <a id="location" href="geo:0,0?q=30.7962524,30.9946362" class="custom-list other-games"> <img src="img/maps-and-flags.png" alt="contact"> موقع النادى </a>
+                    </div>
                     <!-- --------------------------- -->
                 </div>
-                
                 <div class="social-icon">
                   <a onclick="cordova.InAppBrowser.open('https://www.facebook.com/tantaclub.net/?ref=br_rs', '_system')" > <img src="img/facebook.png" alt="facebook"> </a>
                   <a onclick="cordova.InAppBrowser.open('https://twitter.com/TantaSC', '_system')"  > <img src="img/twitter.png" alt="twitter"> </a>
@@ -154,7 +155,7 @@
         <div class="col-2 h-100">
           <div class="h-100 search">
             <ul class=" h-100 position-relative d-flex justify-content-end align-items-center">
-              <li> <i onclick="redirect('index.php')" class="mdi mdi-arrow-left"> </i> </li>
+              <li> <i onclick="window.location.href = 'index.html'" class="mdi mdi-arrow-left"> </i> </li>
             </ul>
           </div>
         </div>
@@ -162,9 +163,9 @@
     </div>
   </nav>
 
-<div id="body" >
+<div  id="body" >
     <div class="overlay d-none"></div>
-    <iframe id="iframe" name="iframe" src="http://tantasc.net/members-mobile/" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
+    <iframe id="iframe" name="iframe" src="http://tantasc.net/members-mobile/contact_us.php" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
   </div>
 </div>
 </div>
@@ -175,12 +176,13 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" >
+      document.addEventListener("deviceready", function() {
 
-      function redirect(path){
-        $(".menu").removeClass("rigth");
-        $('#loading').show();
-        document.getElementById('iframe').src = 'http://tantasc.net/members-mobile/' + path;
-      }
+            if(device.platform == 'iPhone'){
+                document.getElementById('location').href = 'maps://?q=30.7962524,30.9946362';
+            }
+
+        }, false);
 
       $(document).ready(function () {
 
@@ -196,8 +198,8 @@
             $(".toggle-menu i").on("click", function(e) {
               $(".menu").toggleClass("rigth")
               e.stopPropagation();
-  				    $(".overlay").toggleClass("d-none");
               $("#body").toggleClass("no-scroll");
+              $(".overlay").toggleClass("d-none");
             });
 
             $(".menu").on("click", function(e) {
@@ -206,11 +208,9 @@
             $("#body").on("click", function() {
               $(".menu").removeClass("rigth");
               $(this).removeClass("no-scroll");
+            $(".overlay").addClass("d-none");
             });
-		  
-		  	$(".overlay").on("click", function () {
-  				$(this).toggleClass("d-none");
-  			});
+
         });
 
     </script>
