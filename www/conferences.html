@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
 
 </head>
 
@@ -28,15 +29,27 @@
     <div style="width: 100%; background-color:#f5f5f5" >
 
     <!--  Expanded menu  -->
+
+<div class="button-nav fixed-bottom">
+	<ul class="w-100 d-flex justify-content-around">
+		
+		<li> <a href="index.html"> <i class="mdi mdi-home d-block"></i> الرئيسيه </a> </li>
+		<li> <a href="news.html"> <i class="mdi mdi-file-document-box d-block"></i> الاخبار </a> </li>
+		<li> <a href="login.html"> <i class="mdi mdi-login d-block"></i> دخول الاعضاء </a> </li>
+		<li> <a id="more"> <i class="mdi mdi-dots-vertical d-block"></i> المزيد</a> </li>
+	</ul>
+</div>
+
+    <!--  Expanded menu  -->
+    <div class="expand-side-menu">
     <div class="member-login menu">
 
         <div class="container-fluid">
             <div class="content">
-                <div class="img text-center">
+                <div class="img m-3 text-center">
                     <img src="img/logo/logo.png" width="100px">
                 </div>
                 <div class="menus">
-                    <button type="" onclick="window.location = 'login.html'" class="custom-botton d-block w-100">دخول الاعضاء</button>
 
                     <div class="menu-list text-right">
                         <a href="index.html" class="custom-list"> <img src="img/homepage.png" alt="homebage">  الرئيسية </a>
@@ -134,38 +147,10 @@
             </div>
         </div>
     </div>
-
-
-    <nav class="fixed-top">
-    <form id="search">
-      <input type="search" placeholder="البحث" autofocus>
-    </form>
-    <div class="container-fluid h-100">
-      <div class="row h-100">
-        <div class="col-2 h-100">
-          <div class="toggle-menu h-100 d-flex align-items-center">
-            <i class="mdi mdi-menu"></i>
-          </div>
-        </div>
-        <div class="col-8 h-100">
-          <div class="logo h-100 d-flex justify-content-center align-items-center">
-            <img src="img/logo/tanta-clup.jpg" alt="Tanta" width="25px" height="25px">
-            <span class="text-white"> نادى طنطا الرياضى </span>
-          </div>
-        </div>
-        <div class="col-2 h-100">
-          <div class="h-100 search">
-            <ul class=" h-100 position-relative d-flex justify-content-end align-items-center">
-              <li> <i onclick="window.location.href = 'index.html'" class="mdi mdi-arrow-left"> </i> </li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
-  </nav>
+    
 
 <div  id="body" >
-    <div class="overlay d-none"></div>
     <iframe id="iframe" name="iframe" src="http://tantasc.net/members-mobile/conferences.php" style="width: 100%; height: calc(100vh - 59px)" ></iframe>
   </div>
 </div>
@@ -211,7 +196,10 @@
               $(this).removeClass("no-scroll");
               $(".overlay").addClass("d-none");
             });
-
+			$("#more").on("click", function () {
+				$(".expand-side-menu").toggleClass("left");
+				$("#body").toggleClass("no-scroll");
+			});
         });
 
     </script>
