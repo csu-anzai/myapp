@@ -65,8 +65,10 @@ var app = {
 
           response.data.forEach(post => {
 
+            var img = (typeof post._embedded['wp:featuredmedia'] !== 'undefined') ? post._embedded['wp:featuredmedia'][0].source_url :  "http://www.tantasc.net/wp-content/uploads/2018/06/placeholder.png";
+
             document.getElementById("slider").innerHTML += "<div class='slider slider1 '>" +
-              "<img src='" + post._embedded['wp:featuredmedia'][0].source_url + "' alt='slider-img' class='w-100 h-100'>" +
+              "<img src='" + img + "' alt='slider-img' class='w-100 h-100'>" +
               "<p><a href='post.html#" + post.id + "' >" + post.title.rendered + "</a></p>" +
             "</div>";
 
@@ -81,9 +83,9 @@ var app = {
             });
 
           resolve(true);
-        }).catch(function(){
-          reject();
-        });;
+        }).catch(function(error){
+          reject(error);
+        });
       });
 
       // get posts for latest news
@@ -98,9 +100,12 @@ var app = {
 
             var a = date.format('a') == 'am' ? 'صباحا' : 'مساءا';
 
+            var img = (typeof post._embedded['wp:featuredmedia'] !== 'undefined') ? post._embedded['wp:featuredmedia'][0].source_url :  "http://www.tantasc.net/wp-content/uploads/2018/06/placeholder.png";
+
+
             document.getElementById("posts").innerHTML += "<div class='card mb-4'>" +
               "<a href='post.html#" + post.id + "' >" +
-              "<img class='card-img-top' src='" + post._embedded['wp:featuredmedia'][0].source_url + "' height='150px' alt='Card image cap' >" +
+              "<img class='card-img-top' src='" + img + "' height='150px' alt='Card image cap' >" +
               "</a>" +
               "<div class='card-body'>" +
                 "<a class='news-title d-inline-block' href='post.html#" + post.id + "'>" +
@@ -117,14 +122,15 @@ var app = {
 
         }).then(() => {
           resolve(true);
-        }).catch(function(){
-          reject();
+        }).catch(function(error){
+          reject(error);
         });
       });
 
       Promise.all([data1, data2]).then(function(values){
         $('#loading').hide();
-      }).catch(function(){
+      }).catch(error => { 
+        console.log(error);
         $('#loading').hide();
       });
 
@@ -163,9 +169,11 @@ var app = {
 
           var a = date.format('a') == 'am' ? 'صباحا' : 'مساءا';
 
+          var img = (typeof post._embedded['wp:featuredmedia'] !== 'undefined') ? post._embedded['wp:featuredmedia'][0].source_url :  "http://www.tantasc.net/wp-content/uploads/2018/06/placeholder.png";
+
           document.getElementById("posts").innerHTML += "<div class='card mb-4'>" +
               "<a href='post.html#" + post.id + "' >" +
-              "<img class='card-img-top' src='" + post._embedded['wp:featuredmedia'][0].source_url + "' height='150px' alt='Card image cap' >" +
+              "<img class='card-img-top' src='" + img + "' height='150px' alt='Card image cap' >" +
               "</a>" +
               "<div class='card-body'>" +
                 "<a class='news-title d-inline-block' href='post.html#" + post.id + "'>" +
@@ -181,7 +189,8 @@ var app = {
 
         }).then(function(){
           $('#loading').hide();
-        }).catch(function(){
+        }).catch(function(error){
+          console.log(error);
           $('#loading').hide();
         });
   },
@@ -202,7 +211,9 @@ var app = {
 
         var a = date.format('a') == 'am' ? 'صباحا' : 'مساءا';
 
-        document.getElementById("img").setAttribute('src', post._embedded['wp:featuredmedia'][0].source_url);
+        var img = (typeof post._embedded['wp:featuredmedia'] !== 'undefined') ? post._embedded['wp:featuredmedia'][0].source_url :  "http://www.tantasc.net/wp-content/uploads/2018/06/placeholder.png";
+
+        document.getElementById("img").setAttribute('src', img);
         document.getElementById("title").innerHTML = post.title.rendered;
         document.getElementById("date").innerHTML = date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a;
         document.getElementById("article").innerHTML = post.content.rendered;
@@ -229,8 +240,11 @@ var app = {
 
             var a = date.format('a') == 'am' ? 'صباحا' : 'مساءا';
 
+            var img = (typeof onePost._embedded['wp:featuredmedia'] !== 'undefined') ? onePost._embedded['wp:featuredmedia'][0].source_url :  "http://www.tantasc.net/wp-content/uploads/2018/06/placeholder.png";
+  
+
             document.getElementById("related-posts").innerHTML += "<a onclick='app.post(" + onePost.id + ")' class='media position-relative mb-4'>" +
-                "<img class='d-flex mr-3 mb-3' src='" + onePost._embedded['wp:featuredmedia'][0].source_url + "' alt='Generic placeholder image'>" +
+                "<img class='d-flex mr-3 mb-3' src='" +  img + "' alt='Generic placeholder image'>" +
                 "<div class='media-body'>" +
                 "<p>" + onePost.title.rendered + "</p>" +
                 "<span>" + date.locale('ar').format('dddd ') + date.locale('en').format('YYYY/M/D - h:mm ') + a + "</span>" +
@@ -261,7 +275,7 @@ var app = {
           } else {
             document.getElementById("img").style.display = 'none';
           }
-          // document.getElementById("title").innerHTML = page.title.rendered;
+          document.getElementById("main-title").innerHTML = page.title.rendered;
           document.getElementById("article").innerHTML = page.content.rendered;
           $(".mdi-share-variant").on("click", function(e){
             app.share(page.link);
@@ -269,7 +283,8 @@ var app = {
 
         }).then(function(){
           $('#loading').hide();
-        }).catch(function(){
+        }).catch(function(error){
+          console.log(error);
           $('#loading').hide();
         });
   },
